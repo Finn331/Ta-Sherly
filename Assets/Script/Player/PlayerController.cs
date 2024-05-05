@@ -69,8 +69,10 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
         anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
         anim.SetBool("isGrounded", IsGrounded());
+        
 
         // Check if facing a wall, then play idle animation
         if (IsFacingWall())
@@ -88,12 +90,14 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpsRemaining = 1; // Reset jumps remaining when grounded
             anim.SetTrigger("jump");
+            
         }
         else if (jumpsRemaining > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpsRemaining--; // Decrease jumps remaining when performing a double jump
             anim.SetTrigger("jump");
+            
         }
     }
 
@@ -132,6 +136,9 @@ public class PlayerController : MonoBehaviour
         return hit.collider != null;
     }
 
-
+    public bool canAttack()
+    {
+        return horizontal == 0 && IsGrounded();
+    }
 
 }
