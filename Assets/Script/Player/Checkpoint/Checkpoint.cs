@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Vector3 respawnPoint;
+    private PlayerStatus playerStatus;
+
     void Start()
     {
-        
+        // Mendapatkan posisi checkpoint saat ini
+        respawnPoint = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            // Menyimpan posisi checkpoint saat player bercollide dengan checkpoint
+            respawnPoint = transform.position;
+        }
+    }
+
+    public void RespawnPlayer()
+    {
+        // Mengatur posisi pemain ke posisi checkpoint terakhir dan mengisi kembali kesehatannya
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = respawnPoint;
+        playerStatus = player.GetComponent<PlayerStatus>();
+        if (playerStatus != null)
+        {
+            playerStatus.ResetHealth();
+        }
     }
 }
