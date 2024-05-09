@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Projectile
+  - Obstacle
   layers:
   - Default
   - TransparentFX

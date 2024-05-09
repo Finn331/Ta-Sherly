@@ -27,14 +27,34 @@ public class PlayerStatus : MonoBehaviour
        Health();
         Score();
     }
-
+    void Die()
+    {
+        // Pemanggilan respawn pada checkpoint saat pemain mati
+        Checkpoint checkpointManager = FindObjectOfType<Checkpoint>();
+        if (checkpointManager != null)
+        {
+            checkpointManager.RespawnPlayer();
+        }
+        else
+        {
+            Debug.LogError("CheckpointManager tidak ditemukan!");
+        }
+    }
     public void Health()
     {
         healthText.text ="Health: " + currHealth.ToString();
+        if (currHealth == 0)
+        {
+            Die();
+        }
     }
 
     public void Score()
     {
         scoreText.text = "Score: " + score.ToString();
+    }
+    public void ResetHealth()
+    {
+        currHealth = maxHealth;
     }
 }

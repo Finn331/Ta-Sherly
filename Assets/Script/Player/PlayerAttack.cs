@@ -4,59 +4,35 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject projectilePrefab;
-    public Transform spawnPoint;
-    public float fireRate = 0.5f;
-    public float projectileLifetime = 5f; // Added projectile lifetime
-    private float nextFireTime;
-    private Animator anim;
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public float bulletForce = 20f;
 
-    private List<GameObject> pooledProjectiles = new List<GameObject>();
-    public int pooledAmount = 20;
-
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-
-        for (int i = 0; i < pooledAmount; i++)
-        {
-            GameObject obj = Instantiate(projectilePrefab);
-            obj.SetActive(false);
-            pooledProjectiles.Add(obj);
-        }
-    }
-
+    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFireTime)
+        if (Input.GetButtonDown("Fire1")) // Assuming Fire1 is your fire button (like left mouse button)
         {
-            anim.SetTrigger("attack");
-            //anim.SetBool("isFire", true);
-            nextFireTime = Time.time + fireRate;
-            FireProjectile();
-        }
-
-        
-    }
-
-    void FireProjectile()
-    {
-        for (int i = 0; i < pooledProjectiles.Count; i++)
-        {
-            if (!pooledProjectiles[i].activeInHierarchy)
-            {
-                pooledProjectiles[i].transform.position = spawnPoint.position;
-                pooledProjectiles[i].transform.rotation = spawnPoint.rotation;
-                pooledProjectiles[i].SetActive(true);
-                StartCoroutine(DeactivateProjectile(pooledProjectiles[i])); // Start coroutine to deactivate projectile
-                break;
-            }
+            Shoot();
         }
     }
 
-    IEnumerator DeactivateProjectile(GameObject projectile)
+    void Shoot()
     {
-        yield return new WaitForSeconds(projectileLifetime);
-        projectile.SetActive(false);
+        // Determine the direction based on the player's facing direction
+        Vector2 shootDirection = transform.right; // By default, shoot to the right
+
+        // Check if the player is facing left
+        if (transform.localScale.x < 0) // If the local scale's x component is negative, player is facing left
+        {
+            shootDirection = -transform.right; // Set shoot direction to left
+        }
+
+        // Spawn bullet at the firePoint position
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+        // Apply force to the bullet
+        rb.AddForce(shootDirection * bulletForce, ForceMode2D.Impulse);
     }
 }
