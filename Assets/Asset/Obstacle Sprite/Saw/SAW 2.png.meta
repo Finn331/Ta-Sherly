@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb3195a479e4d1d4597dba062ae238b8
+guid: 05866b4181aba9e4e8180affe5d37e64
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -81,7 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -152,10 +152,10 @@ TextureImporter:
       name: Saw-Resize_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 8
-        width: 150
-        height: 145
+        x: 32
+        y: 16
+        width: 247
+        height: 238
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eaabb1533386bb40b75ef6e808abc59
-      internalID: 1236206320
+      spriteID: b99f728093fb0e04490ab4acd143f85f
+      internalID: -246238097
       vertices: []
       indices: 
       edges: []
@@ -173,10 +173,10 @@ TextureImporter:
       name: Saw-Resize_1
       rect:
         serializedVersion: 2
-        x: 183
-        y: 8
-        width: 147
-        height: 146
+        x: 299
+        y: 15
+        width: 242
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d507b1b30481406449c6e4e6b588049a
-      internalID: 2143491750
+      spriteID: 38e666743c9d314479c749fa960d4576
+      internalID: -524200498
       vertices: []
       indices: 
       edges: []
@@ -194,10 +194,10 @@ TextureImporter:
       name: Saw-Resize_2
       rect:
         serializedVersion: 2
-        x: 343
-        y: 8
-        width: 148
-        height: 147
+        x: 563
+        y: 15
+        width: 243
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 803284b112396444981fe517628c2a98
-      internalID: -1105974358
+      spriteID: 2b45b0ac0e974c44b839f40a263894b5
+      internalID: -34187849
       vertices: []
       indices: 
       edges: []
@@ -215,10 +215,10 @@ TextureImporter:
       name: Saw-Resize_3
       rect:
         serializedVersion: 2
-        x: 504
-        y: 8
-        width: 143
-        height: 142
+        x: 826
+        y: 15
+        width: 235
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,8 +226,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da62334545444604ab064926e7ca297a
-      internalID: -1537811047
+      spriteID: 23e823875fced0e428e3ce1089afcd75
+      internalID: 1258344101
       vertices: []
       indices: 
       edges: []
@@ -236,10 +236,10 @@ TextureImporter:
       name: Saw-Resize_4
       rect:
         serializedVersion: 2
-        x: 660
-        y: 7
-        width: 146
-        height: 147
+        x: 1084
+        y: 14
+        width: 240
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b1258725b5413f40a8803dbc0689d40
-      internalID: -1589659751
+      spriteID: 5f8dff7ca22a8e54f93cb266ef9e4ba0
+      internalID: 1935441662
       vertices: []
       indices: 
       edges: []
@@ -257,10 +257,10 @@ TextureImporter:
       name: Saw-Resize_5
       rect:
         serializedVersion: 2
-        x: 820
-        y: 5
-        width: 146
-        height: 149
+        x: 1345
+        y: 10
+        width: 242
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 051503b29878f364baf6aa5f466cdbca
-      internalID: 1811323762
+      spriteID: 8d3fa194a4ebee24493290a993e7e3d2
+      internalID: 1468627775
       vertices: []
       indices: 
       edges: []
@@ -278,10 +278,10 @@ TextureImporter:
       name: Saw-Resize_6
       rect:
         serializedVersion: 2
-        x: 980
-        y: 6
-        width: 145
-        height: 149
+        x: 1609
+        y: 11
+        width: 239
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,8 +289,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3a77a0149efdd94f837a7d28f31f429
-      internalID: 915024796
+      spriteID: 65e7706c5cddeb7418a5b4788eca9c9d
+      internalID: 6754478
       vertices: []
       indices: 
       edges: []
@@ -299,10 +299,10 @@ TextureImporter:
       name: Saw-Resize_7
       rect:
         serializedVersion: 2
-        x: 1139
-        y: 9
-        width: 141
-        height: 144
+        x: 1870
+        y: 16
+        width: 232
+        height: 238
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,8 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cfdf8b2a185dfd4fad1d2b95840a75f
-      internalID: 485758374
+      spriteID: 2787757d1a992f440b7384634a957ae4
+      internalID: 1145331191
       vertices: []
       indices: 
       edges: []
@@ -327,14 +327,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Saw-Resize_0: 1236206320
-      Saw-Resize_1: 2143491750
-      Saw-Resize_2: -1105974358
-      Saw-Resize_3: -1537811047
-      Saw-Resize_4: -1589659751
-      Saw-Resize_5: 1811323762
-      Saw-Resize_6: 915024796
-      Saw-Resize_7: 485758374
+      Saw-Resize_0: -246238097
+      Saw-Resize_1: -524200498
+      Saw-Resize_2: -34187849
+      Saw-Resize_3: 1258344101
+      Saw-Resize_4: 1935441662
+      Saw-Resize_5: 1468627775
+      Saw-Resize_6: 6754478
+      Saw-Resize_7: 1145331191
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

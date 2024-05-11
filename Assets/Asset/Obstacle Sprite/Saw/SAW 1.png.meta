@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3521eafd8eb5f9f4e92b9807643f38db
+guid: fb3195a479e4d1d4597dba062ae238b8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -145,17 +145,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkpoint-Resize_0
+      name: Saw-Resize_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 41
-        width: 96
-        height: 158
+        x: 20
+        y: 8
+        width: 150
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d1af308beb789a41a5ff209ec8a882f
-      internalID: 2128278301
+      spriteID: 7eaabb1533386bb40b75ef6e808abc59
+      internalID: 1236206320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint-Resize_1
+      name: Saw-Resize_1
       rect:
         serializedVersion: 2
-        x: 197
-        y: 41
-        width: 96
-        height: 171
+        x: 183
+        y: 8
+        width: 147
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ca742bd9aa694b4c8fa8d7979223f00
-      internalID: 694200870
+      spriteID: d507b1b30481406449c6e4e6b588049a
+      internalID: 2143491750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint-Resize_2
+      name: Saw-Resize_2
       rect:
         serializedVersion: 2
-        x: 346
-        y: 41
-        width: 96
-        height: 180
+        x: 343
+        y: 8
+        width: 148
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4240fdf824ee46c42abc8ae9174635fe
-      internalID: 2093855613
+      spriteID: 803284b112396444981fe517628c2a98
+      internalID: -1105974358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint-Resize_3
+      name: Saw-Resize_3
       rect:
         serializedVersion: 2
-        x: 495
-        y: 41
-        width: 96
-        height: 190
+        x: 504
+        y: 8
+        width: 143
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d98cba83b90d5244aa71953ddb44aee9
-      internalID: 1869049901
+      spriteID: da62334545444604ab064926e7ca297a
+      internalID: -1537811047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint-Resize_4
+      name: Saw-Resize_4
       rect:
         serializedVersion: 2
-        x: 644
-        y: 41
-        width: 96
-        height: 198
+        x: 660
+        y: 7
+        width: 146
+        height: 147
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93ccb1a1bb28bb047a7b4167be72cb75
-      internalID: -2049692154
+      spriteID: 8b1258725b5413f40a8803dbc0689d40
+      internalID: -1589659751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint-Resize_5
+      name: Saw-Resize_5
       rect:
         serializedVersion: 2
-        x: 793
-        y: 41
-        width: 96
-        height: 206
+        x: 820
+        y: 5
+        width: 146
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b15a0cbe8bee454e924082a2803a7cc
-      internalID: -1067464934
+      spriteID: 051503b29878f364baf6aa5f466cdbca
+      internalID: 1811323762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint-Resize_6
+      name: Saw-Resize_6
       rect:
         serializedVersion: 2
-        x: 942
-        y: 41
-        width: 96
-        height: 212
+        x: 980
+        y: 6
+        width: 145
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69ef8685252da2d4a9d690c46705ef37
-      internalID: -907680648
+      spriteID: f3a77a0149efdd94f837a7d28f31f429
+      internalID: 915024796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint-Resize_7
+      name: Saw-Resize_7
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 41
-        width: 96
-        height: 220
+        x: 1139
+        y: 9
+        width: 141
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,92 +323,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 390b2db74d095ee49845bcf3c5dfa0bd
-      internalID: 1922664746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Checkpoint-Resize_8
-      rect:
-        serializedVersion: 2
-        x: 1240
-        y: 41
-        width: 96
-        height: 231
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdd8fadf955f17c4086c547298e32ab1
-      internalID: 25087167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Checkpoint-Resize_9
-      rect:
-        serializedVersion: 2
-        x: 1386
-        y: 42
-        width: 101
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d62e820fac19e74d879f626debe23e9
-      internalID: -514258485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Checkpoint-Resize_10
-      rect:
-        serializedVersion: 2
-        x: 1535
-        y: 42
-        width: 101
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 509a5c500b4ca91459fcbecb68a39488
-      internalID: 958428686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Checkpoint-Resize_11
-      rect:
-        serializedVersion: 2
-        x: 1684
-        y: 42
-        width: 102
-        height: 243
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dad510c566e842d4db3883c0b16ded7a
-      internalID: 279561181
+      spriteID: 2cfdf8b2a185dfd4fad1d2b95840a75f
+      internalID: 485758374
       vertices: []
       indices: 
       edges: []
@@ -411,18 +340,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Checkpoint-Resize_0: 2128278301
-      Checkpoint-Resize_1: 694200870
-      Checkpoint-Resize_10: 958428686
-      Checkpoint-Resize_11: 279561181
-      Checkpoint-Resize_2: 2093855613
-      Checkpoint-Resize_3: 1869049901
-      Checkpoint-Resize_4: -2049692154
-      Checkpoint-Resize_5: -1067464934
-      Checkpoint-Resize_6: -907680648
-      Checkpoint-Resize_7: 1922664746
-      Checkpoint-Resize_8: 25087167
-      Checkpoint-Resize_9: -514258485
+      Saw-Resize_0: 1236206320
+      Saw-Resize_1: 2143491750
+      Saw-Resize_2: -1105974358
+      Saw-Resize_3: -1537811047
+      Saw-Resize_4: -1589659751
+      Saw-Resize_5: 1811323762
+      Saw-Resize_6: 915024796
+      Saw-Resize_7: 485758374
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
