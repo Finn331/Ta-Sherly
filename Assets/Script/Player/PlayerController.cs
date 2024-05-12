@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     private int jumpsRemaining; // Number of jumps remaining
 
+
+
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -27,14 +29,14 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     private PlayerStatus playerStatus;
-
+    public PlayerParticle playerParticle;
     private void Start()
     {
         defaultSpeed = speed;
         jumpsRemaining = 2; // Initialize the number of jumps remaining to 2
 
         // Component Reference for private variables
-        playerStatus = GetComponent<PlayerStatus>();
+        
         anim = GetComponent<Animator>();
     }
 
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
             isSprinting = false;
             speed = defaultSpeed; // Set the speed back to default
         }
+
     }
 
     private void FixedUpdate()
@@ -77,7 +80,10 @@ public class PlayerController : MonoBehaviour
         // Check if facing a wall, then play idle animation
         if (IsFacingWall())
         {
+            //playerParticle.playTouchParticle(wallCheck.position);
             anim.SetFloat("xVelocity", 0f);
+
+            
         }
 
         Flip();

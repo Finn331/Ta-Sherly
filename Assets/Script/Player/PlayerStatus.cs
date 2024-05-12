@@ -14,19 +14,41 @@ public class PlayerStatus : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
-    
+
+    private Animator anim;
+    private float timerHurt = 1f;
+    private float currTimer;
+
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
+        anim = GetComponent<Animator>();
+        currTimer = timerHurt;
     }
 
     // Update is called once per frame
     void Update()
     {
+        currTimer += Time.deltaTime;
        Health();
         Score();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            currHealth -= 1;
+            anim.SetTrigger("hurt");
+            if(currTimer == 1)
+            {
+                currHealth -= 1;
+                anim.SetTrigger("hurt");
+            }
+        }
+    }
+
     void Die()
     {
         // Pemanggilan respawn pada checkpoint saat pemain mati
