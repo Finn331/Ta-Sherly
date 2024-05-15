@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
             isSprinting = false;
             speed = defaultSpeed; // Set the speed back to default
         }
-
     }
 
     private void FixedUpdate()
@@ -75,7 +74,6 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
         anim.SetBool("isGrounded", IsGrounded());
-        
 
         // Check if facing a wall, then play idle animation
         if (IsFacingWall())

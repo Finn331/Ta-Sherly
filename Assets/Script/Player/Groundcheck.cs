@@ -24,7 +24,7 @@ public class Groundcheck : MonoBehaviour
 
     void GroundCheck()
     {
-        Hit2D = Physics2D.Raycast(raycastOrigin.position, -Vector2.up, 100f, groundLayer);
+        Hit2D = Physics2D.Raycast(raycastOrigin.position, -Vector2.up, 0.2f, groundLayer);
 
         if (Hit2D != false)
         {

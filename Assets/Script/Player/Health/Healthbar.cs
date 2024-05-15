@@ -5,9 +5,10 @@ public class Healthbar : MonoBehaviour
 {
     // PlayerStatus script reference
     private PlayerStatus playerStatus;
-    
+
     // Healthbar
     public Image[] heart;
+    public Image[] emptyHeart;
 
     private void Start()
     {
@@ -23,8 +24,16 @@ public class Healthbar : MonoBehaviour
     {
         for (int i = 0; i < heart.Length; i++)
         {
-            // Aktifkan atau nonaktifkan sprite sesuai dengan currentHealth
-            heart[i].enabled = i < playerStatus.currHealth;
+            if (i < playerStatus.currHealth)
+            {
+                heart[i].enabled = true;
+                emptyHeart[i].enabled = false;
+            }
+            else
+            {
+                heart[i].enabled = false;
+                emptyHeart[i].enabled = true;
+            }
         }
     }
 }

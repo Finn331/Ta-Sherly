@@ -1,38 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
-    public float bulletForce = 20f;
+    [Header("Attack Settings")]
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private AudioClip fireballSound;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Ground Check")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+
+    private Animator anim;
+    private PlayerController playerMovement;
+    private float cooldownTimer = Mathf.Infinity;
+
+    private void Awake()
     {
-        if (Input.GetButtonDown("Fire1")) // Assuming Fire1 is your fire button (like left mouse button)
-        {
-            Shoot();
-        }
+        anim = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerController>();
     }
 
-    void Shoot()
+    private void FixedUpdate()
     {
-        // Determine the direction based on the player's facing direction
-        Vector2 shootDirection = transform.right; // By default, shoot to the right
-
-        // Check if the player is facing left
-        if (transform.localScale.x < 0) // If the local scale's x component is negative, player is facing left
+        if (IsGrounded())
         {
-            shootDirection = -transform.right; // Set shoot direction to left
+            anim.SetBool("isGrounded", true);
+
+            if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown/* && playerMovement.canAttack()*/
+                && Time.timeScale > 0)
+            {
+                Attack();
+
+                
+            }
         }
 
-        // Spawn bullet at the firePoint position
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        cooldownTimer += Time.deltaTime;
+    }
 
-        // Apply force to the bullet
-        rb.AddForce(shootDirection * bulletForce, ForceMode2D.Impulse);
+    private void Attack()
+    {
+        //SoundManager.instance.PlaySound(fireballSound);
+        anim.SetTrigger("attack");
+        cooldownTimer = 0;
+
+        fireballs[FindFireball()].transform.position = firePoint.position;
+        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
+    private int FindFireball()
+    {
+        for (int i = 0; i < fireballs.Length; i++)
+        {
+            if (!fireballs[i].activeInHierarchy)
+                return i;
+        }
+        return 0;
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.01f, groundLayer);
+
     }
 }

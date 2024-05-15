@@ -51,16 +51,16 @@ public class PlayerStatus : MonoBehaviour
 
     void Die()
     {
-        // Pemanggilan respawn pada checkpoint saat pemain mati
-        Checkpoint checkpointManager = FindObjectOfType<Checkpoint>();
-        if (checkpointManager != null)
-        {
-            checkpointManager.RespawnPlayer();
-        }
-        else
-        {
-            Debug.LogError("CheckpointManager tidak ditemukan!");
-        }
+        //// Pemanggilan respawn pada checkpoint saat pemain mati
+        //Checkpoint checkpointManager = FindObjectOfType<Checkpoint>();
+        //if (checkpointManager != null)
+        //{
+        //    checkpointManager.RespawnPlayer();
+        //}
+        //else
+        //{
+        //    Debug.LogError("CheckpointManager tidak ditemukan!");
+        //}
     }
     public void Health()
     {
