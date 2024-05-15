@@ -75,7 +75,7 @@ public class PlayerStatus : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
     }
-    public void ResetHealth()
+    public void Respawn()
     {
         currHealth = maxHealth;
     }
