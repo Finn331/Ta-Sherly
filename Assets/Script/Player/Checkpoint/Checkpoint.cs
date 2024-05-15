@@ -2,33 +2,41 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    //private Vector3 respawnPoint;
-    //private PlayerStatus playerStatus;
+    [SerializeField] private AudioClip checkpoint;
+    private Transform currentCheckpoint;
+    private PlayerStatus playerStatus;
 
-    //void Start()
-    //{
-    //    // Mendapatkan posisi checkpoint saat ini
-    //    respawnPoint = transform.position;
-    //}
+    private void Awake()
+    {
+        // Memastikan playerStatus ditemukan pada GameObject yang benar
+        playerStatus = FindObjectOfType<PlayerStatus>();
+        if (playerStatus == null)
+        {
+            Debug.LogError("PlayerStatus tidak ditemukan dalam scene!");
+        }
+    }
 
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        // Menyimpan posisi checkpoint saat player bercollide dengan checkpoint
-    //        respawnPoint = transform.position;
-    //    }
-    //}
+    public void RespawnCheck()
+    {
+        if (currentCheckpoint == null)
+        {
+            Debug.LogWarning("currentCheckpoint masih null, memanggil Die pada playerStatus");
+            playerStatus.Die();
+            return; // Menghentikan eksekusi untuk mencegah kesalahan lebih lanjut
+        }
 
-    //public void RespawnPlayer()
-    //{
-    //    // Mengatur posisi pemain ke posisi checkpoint terakhir dan mengisi kembali kesehatannya
-    //    GameObject player = GameObject.FindGameObjectWithTag("Player");
-    //    player.transform.position = respawnPoint;
-    //    playerStatus = player.GetComponent<PlayerStatus>();
-    //    if (playerStatus != null)
-    //    {
-    //        playerStatus.ResetHealth();
-    //    }
-    //}
+        playerStatus.Respawn();
+        transform.position = currentCheckpoint.position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            currentCheckpoint = collision.transform;
+            //SoundManager.instance.PlaySound(checkpoint);
+            collision.GetComponent<Collider2D>().enabled = false;
+            collision.GetComponent<Animator>().SetTrigger("triggered");
+        }
+    }
 }

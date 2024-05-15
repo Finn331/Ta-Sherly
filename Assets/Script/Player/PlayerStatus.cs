@@ -18,6 +18,12 @@ public class PlayerStatus : MonoBehaviour
     private Animator anim;
     private float timerHurt = 1f;
     private float currTimer;
+    private PlayerController playerController; // Reference to PlayerController script
+    private Rigidbody2D rb;
+
+    // Array of components to disable when player dies
+    [Header("Components")]
+    public Component[] components;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,8 @@ public class PlayerStatus : MonoBehaviour
         currHealth = maxHealth;
         anim = GetComponent<Animator>();
         currTimer = timerHurt;
+        rb = GetComponent<Rigidbody2D>();
+        playerController = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -49,18 +57,31 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
-        //// Pemanggilan respawn pada checkpoint saat pemain mati
+        anim.SetTrigger("dead");
+        anim.SetBool("isDead", true);
+        playerController.enabled = false;
+        
+        rb.position = new Vector3(0, 0, 0);
+        //foreach (Component component in components)
+        //{
+        //    if (component != this && component is Behaviour)
+        //    {
+        //        ((Behaviour)component).enabled = false;
+        //    }
+        //}
+
+        //Pemanggilan respawn pada checkpoint saat pemain mati
         //Checkpoint checkpointManager = FindObjectOfType<Checkpoint>();
-        //if (checkpointManager != null)
-        //{
-        //    checkpointManager.RespawnPlayer();
-        //}
-        //else
-        //{
-        //    Debug.LogError("CheckpointManager tidak ditemukan!");
-        //}
+        // if (checkpointManager == null)
+        // {
+        //     checkpointManager.RespawnCheck();
+        // }
+        // else
+        // {
+
+        // }
     }
     public void Health()
     {
@@ -78,5 +99,19 @@ public class PlayerStatus : MonoBehaviour
     public void Respawn()
     {
         currHealth = maxHealth;
+        anim.ResetTrigger("dead");
+        anim.SetBool("isDead", false);
+        anim.Play("Movement");
+        playerController.enabled = true;
+
+        
+        //foreach (Component component in components)
+        //{
+        //    if (component != this && component is Behaviour)
+        //    {
+        //        ((Behaviour)component).enabled = true;
+        //    }
+        //}
+
     }
 }

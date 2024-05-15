@@ -111,13 +111,13 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void Die() // Not Implemented Yet
-    {
-        if (playerStatus.currHealth == 0)
-        {
-            // Animasi Death & Checkpoint Logic
-        }
-    }
+    //void Die() // Not Implemented Yet
+    //{
+    //    if (playerStatus.currHealth == 0)
+    //    {
+    //        // Animasi Death & Checkpoint Logic
+    //    }
+    //}
 
     private void Flip()
     {
