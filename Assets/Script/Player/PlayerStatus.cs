@@ -1,17 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class PlayerStatus : MonoBehaviour
 {
+    [Header("Player Status")]
     public int maxHealth;
     public int currHealth;
-
     public int damage;
-
     public int score;
-
+    private bool dead;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
 
@@ -21,39 +19,37 @@ public class PlayerStatus : MonoBehaviour
     private PlayerController playerController; // Reference to PlayerController script
     private Rigidbody2D rb;
 
-    // Array of components to disable when player dies
+    [Header("iFrames")]
+    [SerializeField] private float iFramesDuration;
+    [SerializeField] private int numberOfFlashes;
+    private SpriteRenderer spriteRend;
+    private bool invulnerable;
+
     [Header("Components")]
     public Component[] components;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         currHealth = maxHealth;
         anim = GetComponent<Animator>();
         currTimer = timerHurt;
         rb = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
+        spriteRend = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         currTimer += Time.deltaTime;
-       Health();
+        Health();
         Score();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.CompareTag("Obstacle") && !invulnerable)
         {
-            currHealth -= 1;
-            anim.SetTrigger("hurt");
-            if(currTimer == 1)
-            {
-                currHealth -= 1;
-                anim.SetTrigger("hurt");
-            }
+            TakeDamage(damage);
         }
     }
 
@@ -62,33 +58,48 @@ public class PlayerStatus : MonoBehaviour
         anim.SetTrigger("dead");
         anim.SetBool("isDead", true);
         playerController.enabled = false;
-        
-        rb.position = new Vector3(0, 0, 0);
-        //foreach (Component component in components)
-        //{
-        //    if (component != this && component is Behaviour)
-        //    {
-        //        ((Behaviour)component).enabled = false;
-        //    }
-        //}
 
-        //Pemanggilan respawn pada checkpoint saat pemain mati
-        //Checkpoint checkpointManager = FindObjectOfType<Checkpoint>();
-        // if (checkpointManager == null)
-        // {
-        //     checkpointManager.RespawnCheck();
-        // }
-        // else
-        // {
+        // Mengatur kecepatan Rigidbody2D menjadi nol
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.isKinematic = true; // Membuat Rigidbody2D menjadi kinematic agar tidak terpengaruh oleh fisika
 
-        // }
+        foreach (Component component in components)
+        {
+            if (component != this && component is Behaviour)
+            {
+                ((Behaviour)component).enabled = false;
+            }
+        }
     }
+
+    public void TakeDamage(float _damage)
+    {
+        if (invulnerable) return;
+        currHealth = (int)Mathf.Clamp(currHealth - _damage, 0, maxHealth);
+
+        if (currHealth > 0)
+        {
+            anim.SetTrigger("hurt");
+            StartCoroutine(Invunerability());
+        }
+        else
+        {
+            if (!dead)
+            {
+                Die();
+                dead = true;
+            }
+        }
+    }
+
     public void Health()
     {
-        healthText.text ="Health: " + currHealth.ToString();
-        if (currHealth == 0)
+        healthText.text = "Health: " + currHealth.ToString();
+        if (currHealth == 0 && !dead)
         {
             Die();
+            dead = true;
         }
     }
 
@@ -96,22 +107,39 @@ public class PlayerStatus : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
     }
+
     public void Respawn()
     {
         currHealth = maxHealth;
         anim.ResetTrigger("dead");
         anim.SetBool("isDead", false);
-        anim.Play("Movement");
         playerController.enabled = true;
+        rb.isKinematic = false; // Membuat Rigidbody2D kembali dipengaruhi oleh fisika
+        dead = false;
 
-        
-        //foreach (Component component in components)
-        //{
-        //    if (component != this && component is Behaviour)
-        //    {
-        //        ((Behaviour)component).enabled = true;
-        //    }
-        //}
+        StartCoroutine(Invunerability());
 
+        foreach (Component component in components)
+        {
+            if (component != this && component is Behaviour)
+            {
+                ((Behaviour)component).enabled = true;
+            }
+        }
+    }
+
+    private IEnumerator Invunerability()
+    {
+        invulnerable = true;
+        Physics2D.IgnoreLayerCollision(10, 11, true);
+        for (int i = 0; i < numberOfFlashes; i++)
+        {
+            spriteRend.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+            spriteRend.color = Color.white;
+            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+        }
+        Physics2D.IgnoreLayerCollision(10, 11, false);
+        invulnerable = false;
     }
 }

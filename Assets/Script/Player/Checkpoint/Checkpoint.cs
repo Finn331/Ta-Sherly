@@ -22,6 +22,7 @@ public class Checkpoint : MonoBehaviour
         {
             Debug.LogWarning("currentCheckpoint masih null, memanggil Die pada playerStatus");
             playerStatus.Die();
+            //playerStatus.TakeDamage();
             return; // Menghentikan eksekusi untuk mencegah kesalahan lebih lanjut
         }
 
