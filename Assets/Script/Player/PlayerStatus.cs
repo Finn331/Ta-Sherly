@@ -28,6 +28,9 @@ public class PlayerStatus : MonoBehaviour
     [Header("Components")]
     public Component[] components;
 
+    [Header("Game Feels")]
+    public CameraShake cameraShake;
+
     void Awake()
     {
         currHealth = maxHealth;
@@ -81,6 +84,7 @@ public class PlayerStatus : MonoBehaviour
         if (currHealth > 0)
         {
             anim.SetTrigger("hurt");
+            cameraShake.ShakeCamera();
             StartCoroutine(Invunerability());
         }
         else

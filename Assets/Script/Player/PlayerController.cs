@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     private int jumpsRemaining; // Number of jumps remaining
 
 
-
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
