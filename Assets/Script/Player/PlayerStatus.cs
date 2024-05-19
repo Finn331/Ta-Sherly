@@ -128,6 +128,16 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    public void DisableSprite()
+    {
+        spriteRend.enabled = false;
+    }
+
+    public void EnableSprite()
+    {
+        spriteRend.enabled = true;
+    }
+
     private IEnumerator Invunerability()
     {
         invulnerable = true;
