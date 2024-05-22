@@ -20,13 +20,11 @@ public class HumanGFX : MonoBehaviour
     {
         if (aiPath.desiredVelocity.x >= 0.01f)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (aiPath.desiredVelocity.y <= -0.01)
         {
-            anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.y));
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 }
