@@ -16,13 +16,12 @@ public class MeleeEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     //References
-    private Animator anim;
+    public Animator anim;
     private PlayerStatus playerHealth;
     private EnemyPatrol enemyPatrol;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
@@ -36,7 +35,7 @@ public class MeleeEnemy : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                anim.SetTrigger("meleeAttack");
+                anim.SetTrigger("attack");
             }
         }
 
