@@ -25,15 +25,33 @@ public class Projectile : MonoBehaviour
         if (lifetime > 5) gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        hit = true;
-        boxCollider.enabled = false;
-        //anim.SetTrigger("explode");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            anim.SetTrigger("explode");
+            speed = 0;
+        }
 
-        //if (collision.tag == "Enemy")
-        //    collision.GetComponent<Health>()?.TakeDamage(1); collision.GetComponent<Health2>()?.TakeDamage(1);
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            anim.SetTrigger("explode");
+            speed = 0;
+        }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            anim.SetTrigger("explode");
+            speed = 0;
+        }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            anim.SetTrigger("explode");
+            speed = 0;
+        }
     }
+
     public void SetDirection(float _direction)
     {
         lifetime = 0;
@@ -48,7 +66,7 @@ public class Projectile : MonoBehaviour
 
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
-    private void Deactivate()
+    public void Deactivate()
     {
         gameObject.SetActive(false);
     }

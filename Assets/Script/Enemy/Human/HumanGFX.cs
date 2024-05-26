@@ -27,4 +27,9 @@ public class HumanGFX : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         }
     }
+
+    void DeactivateEnemy()
+    {
+        gameObject.SetActive(false);
+    }
 }

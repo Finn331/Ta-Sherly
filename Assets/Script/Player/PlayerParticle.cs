@@ -20,7 +20,7 @@ public class PlayerParticle : MonoBehaviour
     [SerializeField] ParticleSystem fallParticle;
     [SerializeField] public ParticleSystem touchParticle;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         touchParticle.transform.parent = null;
