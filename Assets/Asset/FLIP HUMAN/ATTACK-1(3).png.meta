@@ -147,7 +147,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ATTACK-1(3)_0
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 14
+        width: 170
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537a2bbdb27b5564ea22de81bee41741
+      internalID: -422490073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +179,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ATTACK-1(3)_0: -422490073
+      ATTACK-1(3)_1: -1614355840
+      ATTACK-1(3)_2: -1034916375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
