@@ -15,41 +15,55 @@ public class Projectile : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
+
     private void Update()
     {
         if (hit) return;
-        float movementSpeed = speed * Time.deltaTime * direction;
-        transform.Translate(movementSpeed, 0, 0);
 
+        // Move the projectile in a straight line
+        transform.Translate(speed * Time.deltaTime * direction, 0, 0);
+
+        // Track the projectile's lifetime
         lifetime += Time.deltaTime;
-        if (lifetime > 5) gameObject.SetActive(false);
+        if (lifetime > 5) Deactivate();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") ||
+            collision.gameObject.CompareTag("Wall") ||
+            collision.gameObject.CompareTag("Ground") ||
+            collision.gameObject.CompareTag("Obstacle"))
         {
-            anim.SetTrigger("explode");
-            speed = 0;
+            HandleCollision();
         }
+    }
 
-        if (collision.gameObject.CompareTag("Wall"))
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") ||
+            collision.gameObject.CompareTag("Wall") ||
+            collision.gameObject.CompareTag("Ground") ||
+            collision.gameObject.CompareTag("Obstacle"))
         {
-            anim.SetTrigger("explode");
-            speed = 0;
+            HandleCollision();
         }
+    }
 
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            anim.SetTrigger("explode");
-            speed = 0;
-        }
+    private void HandleCollision()
+    {
+        if (hit) return;
 
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            anim.SetTrigger("explode");
-            speed = 0;
-        }
+        hit = true;
+        anim.SetTrigger("explode");
+        boxCollider.enabled = false;
+        speed = 0;
+    }
+
+    // Called by an animation event at the end of the explosion animation
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 
     public void SetDirection(float _direction)
@@ -60,14 +74,8 @@ public class Projectile : MonoBehaviour
         hit = false;
         boxCollider.enabled = true;
 
-        float localScaleX = transform.localScale.x;
-        if (Mathf.Sign(localScaleX) != _direction)
-            localScaleX = -localScaleX;
-
+        // Adjust the projectile's scale based on the direction
+        float localScaleX = Mathf.Abs(transform.localScale.x) * Mathf.Sign(_direction);
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
-    }
-    public void Deactivate()
-    {
-        gameObject.SetActive(false);
     }
 }
