@@ -5,7 +5,7 @@ using UnityEngine;
 public class Quiz : MonoBehaviour
 {
     public GameObject quizPanel;
-    public Transform player;
+    //public Transform player;
     
 
     private void OnTriggerEnter2D(Collider2D collision)

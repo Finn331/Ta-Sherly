@@ -1,3 +1,4 @@
+using Pathfinding;
 using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
@@ -41,6 +42,7 @@ public class MeleeEnemy : MonoBehaviour
 
         if (enemyPatrol != null)
             enemyPatrol.enabled = !PlayerInSight();
+        
     }
 
     private bool PlayerInSight()

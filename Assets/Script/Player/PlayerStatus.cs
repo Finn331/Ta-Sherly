@@ -52,7 +52,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle") && !invulnerable)
         {
-            TakeDamage(damage);
+            TakeDamage(1);
         }
     }
 
