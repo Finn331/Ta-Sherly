@@ -61,7 +61,7 @@ public class PlayerStatus : MonoBehaviour
         anim.SetTrigger("dead");
         anim.SetBool("isDead", true);
         playerController.enabled = false;
-
+        
         // Mengatur kecepatan Rigidbody2D menjadi nol
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
@@ -120,6 +120,7 @@ public class PlayerStatus : MonoBehaviour
         playerController.enabled = true;
         rb.isKinematic = false; // Membuat Rigidbody2D kembali dipengaruhi oleh fisika
         dead = false;
+        EnableSprite();
 
         StartCoroutine(Invunerability());
 
