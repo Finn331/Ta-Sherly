@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 Attack();
                 //anim.SetTrigger("attack");
-
+                
             }
         }
 

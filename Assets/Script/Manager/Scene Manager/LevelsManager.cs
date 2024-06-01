@@ -24,15 +24,27 @@ public class LevelsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Cancel") && !isPaused && !isGameover)
+        InputCheck();
+    }
+
+    void InputCheck()
+    {
+        if (Input.GetButtonDown("Cancel"))
         {
-            PauseGame();
+            if (!isPaused && !isGameover)
+            {
+                PauseGame();
+            }
+            else if (isPaused)
+            {
+                ResumeGame();
+            }
         }
     }
 
@@ -73,6 +85,12 @@ public class LevelsManager : MonoBehaviour
         isPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void BackToMenu()
+    {
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Mainmenu");
     }
 
     public void QuitGame()

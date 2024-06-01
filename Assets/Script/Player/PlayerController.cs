@@ -16,26 +16,21 @@ public class PlayerController : MonoBehaviour
 
     private int jumpsRemaining; // Number of jumps remaining
 
-
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
-    
 
     private Animator anim;
 
-    private PlayerStatus playerStatus;
-    public PlayerParticle playerParticle;
     private void Start()
     {
         defaultSpeed = speed;
         jumpsRemaining = 2; // Initialize the number of jumps remaining to 2
 
         // Component Reference for private variables
-        
         anim = GetComponent<Animator>();
     }
 
@@ -74,13 +69,20 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
         anim.SetBool("isGrounded", IsGrounded());
 
+        // Set isMoving to true when the player is moving
+        if (Mathf.Abs(horizontal) > 0)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
+
         // Check if facing a wall, then play idle animation
         if (IsFacingWall())
         {
-            //playerParticle.playTouchParticle(wallCheck.position);
             anim.SetFloat("xVelocity", 0f);
-
-            
         }
 
         Flip();
@@ -93,30 +95,19 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpsRemaining = 1; // Reset jumps remaining when grounded
             anim.SetTrigger("jump");
-            
         }
         else if (jumpsRemaining > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpsRemaining--; // Decrease jumps remaining when performing a double jump
             anim.SetTrigger("jump");
-            
         }
     }
 
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.01f, groundLayer);
-        
     }
-
-    //void Die() // Not Implemented Yet
-    //{
-    //    if (playerStatus.currHealth == 0)
-    //    {
-    //        // Animasi Death & Checkpoint Logic
-    //    }
-    //}
 
     private void Flip()
     {
@@ -143,5 +134,4 @@ public class PlayerController : MonoBehaviour
     {
         return horizontal == 0 && IsGrounded();
     }
-
 }
