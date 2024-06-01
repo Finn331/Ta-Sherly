@@ -32,8 +32,8 @@ public class PlayerAttack : MonoBehaviour
                 && Time.timeScale > 0)
             {
                 Attack();
+                //anim.SetTrigger("attack");
 
-                
             }
         }
 
