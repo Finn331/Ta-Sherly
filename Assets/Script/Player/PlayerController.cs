@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;   
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,8 +23,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private AudioSource footstepAudioSource;
+    [SerializeField] private AudioClip[] footstepSounds; // Array of footstep sounds
+
 
     private Animator anim;
+    private bool isPlayingFootstep;
 
     private void Start()
     {
@@ -32,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
         // Component Reference for private variables
         anim = GetComponent<Animator>();
+        footstepAudioSource = GetComponent<AudioSource>();
+        isPlayingFootstep = false;
     }
 
     private void Update()
@@ -53,6 +60,12 @@ public class PlayerController : MonoBehaviour
         {
             isSprinting = false;
             speed = defaultSpeed; // Set the speed back to default
+        }
+
+        // Play footstep sound if the player is moving and grounded
+        if (Mathf.Abs(horizontal) > 0 && IsGrounded() && !isPlayingFootstep)
+        {
+            StartCoroutine(PlayFootstepSound());
         }
     }
 
@@ -133,5 +146,17 @@ public class PlayerController : MonoBehaviour
     public bool canAttack()
     {
         return horizontal == 0 && IsGrounded();
+    }
+
+    private IEnumerator PlayFootstepSound()
+    {
+        isPlayingFootstep = true;
+        while (Mathf.Abs(horizontal) > 0 && IsGrounded())
+        {
+            AudioClip footstep = footstepSounds[Random.Range(0, footstepSounds.Length)];
+            footstepAudioSource.PlayOneShot(footstep);
+            yield return new WaitForSeconds(footstep.length);
+        }
+        isPlayingFootstep = false;
     }
 }
