@@ -10,8 +10,8 @@ public class LevelsManager : MonoBehaviour
     [Header("Gameover Parameter")]
     public GameObject gameoverPanel;
 
-    private bool isPaused;
-    private bool isGameover;
+    public bool isPaused;
+    public bool isGameover;
 
     private void Awake()
     {
@@ -30,23 +30,10 @@ public class LevelsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputCheck();
+        //InputCheck();
     }
 
-    void InputCheck()
-    {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if (!isPaused && !isGameover)
-            {
-                PauseGame();
-            }
-            else if (isPaused)
-            {
-                ResumeGame();
-            }
-        }
-    }
+    
 
     public void PauseGame()
     {

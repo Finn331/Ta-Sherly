@@ -7,12 +7,12 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance { get; private set; }
 
     private AudioSource soundSource;
-    private AudioSource musicSource;
+    //private AudioSource musicSource;
 
     private void Awake()
     {
         soundSource = GetComponent<AudioSource>();
-        musicSource = transform.GetChild(0).GetComponent<AudioSource>();
+        //musicSource = transform.GetChild(0).GetComponent<AudioSource>();
 
         //Keep this object even when we go to new scene
         if (instance == null)
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeMusicVolume(float _change)
     {
-        ChangeSourceVolume(0.3f, "musicVolume", _change, musicSource);
+        //ChangeSourceVolume(0.3f, "musicVolume", _change, musicSource);
     }
 
     private void ChangeSourceVolume(float baseVolume, string volumeName, float change, AudioSource source)

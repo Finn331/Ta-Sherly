@@ -5,8 +5,8 @@ using UnityEngine;
 public class Quiz : MonoBehaviour
 {
     public GameObject quizPanel;
-    //public Transform player;
-    
+    public LevelsManager levelsManager;
+    public PlayerController playerController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +14,10 @@ public class Quiz : MonoBehaviour
         {
             quizPanel.SetActive(true);
             Time.timeScale = 0;
-            
+            levelsManager.isPaused = true;
+            playerController.enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

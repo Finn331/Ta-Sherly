@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource footstepAudioSource;
     [SerializeField] private AudioClip[] footstepSounds; // Array of footstep sounds
 
+    [Header("Script Reference")]
+    public LevelsManager levelsManager;
 
     private Animator anim;
     private bool isPlayingFootstep;
@@ -67,6 +69,8 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(PlayFootstepSound());
         }
+
+        InputCheck();
     }
 
     private void FixedUpdate()
@@ -74,7 +78,20 @@ public class PlayerController : MonoBehaviour
         // Move the player horizontally
         Move();
     }
-
+    public void InputCheck()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (levelsManager.isPaused == false && levelsManager.isGameover == false)
+            {
+                levelsManager.PauseGame();
+            }
+            else if (levelsManager.isPaused)
+            {
+                levelsManager.ResumeGame();
+            }
+        }
+    }
     void Move()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
@@ -154,7 +171,8 @@ public class PlayerController : MonoBehaviour
         while (Mathf.Abs(rb.velocity.x) > 0 && IsGrounded())
         {
             AudioClip footstep = footstepSounds[Random.Range(0, footstepSounds.Length)];
-            footstepAudioSource.PlayOneShot(footstep);
+            //footstepAudioSource.PlayOneShot(footstep);
+            AudioManager.instance.PlaySound(footstep);
             yield return new WaitForSeconds(footstep.length);
         }
         isPlayingFootstep = false;

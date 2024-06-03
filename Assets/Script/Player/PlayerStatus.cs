@@ -31,6 +31,10 @@ public class PlayerStatus : MonoBehaviour
     [Header("Game Feels")]
     public CameraShake cameraShake;
 
+    [Header("Audio Clip")]
+    public AudioClip hurtSound;
+    //public AudioClip dieSound;
+
     void Awake()
     {
         currHealth = maxHealth;
@@ -61,7 +65,7 @@ public class PlayerStatus : MonoBehaviour
         anim.SetTrigger("dead");
         anim.SetBool("isDead", true);
         playerController.enabled = false;
-        
+        //AudioManager.instance.PlaySound(dieSound);
         // Mengatur kecepatan Rigidbody2D menjadi nol
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
@@ -84,6 +88,7 @@ public class PlayerStatus : MonoBehaviour
         if (currHealth > 0)
         {
             anim.SetTrigger("hurt");
+            AudioManager.instance.PlaySound(hurtSound);
             cameraShake.ShakeCamera();
             StartCoroutine(Invunerability());
         }

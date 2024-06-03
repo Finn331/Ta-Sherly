@@ -46,5 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizPanel: {fileID: 0}
   quizTrigger: {fileID: 0}
-  wrongText: {fileID: 0}
+  rightAnswer: {fileID: 0}
+  falseAnswer: {fileID: 0}
   textDuration: 1
+  levelsManager: {fileID: 0}
+  playerController: {fileID: 0}
