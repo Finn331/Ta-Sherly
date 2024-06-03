@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PlayFootstepSound()
     {
         isPlayingFootstep = true;
-        while (Mathf.Abs(horizontal) > 0 && IsGrounded())
+        while (Mathf.Abs(rb.velocity.x) > 0 && IsGrounded())
         {
             AudioClip footstep = footstepSounds[Random.Range(0, footstepSounds.Length)];
             footstepAudioSource.PlayOneShot(footstep);

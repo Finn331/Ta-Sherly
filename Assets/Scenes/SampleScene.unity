@@ -2003,6 +2003,11 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
+  footstepAudioSource: {fileID: 0}
+  footstepSounds:
+  - {fileID: 8300000, guid: 36789747fc3fcdf4dbd469f1625d5d15, type: 3}
+  - {fileID: 8300000, guid: ecb7e8c16160db548bea754c222ee59b, type: 3}
+  - {fileID: 8300000, guid: 477d21d57cc8a9a43a78f2d3313821a1, type: 3}
 --- !u!50 &463534909
 Rigidbody2D:
   serializedVersion: 4
