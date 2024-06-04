@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8114344385801995777}
   - component: {fileID: 5203562019479615413}
   - component: {fileID: 7383314689772340886}
-  - component: {fileID: 2005568376720667134}
   - component: {fileID: 4363971174038530264}
+  - component: {fileID: 6749737862985978243}
   m_Layer: 11
   m_Name: BatGFX
   m_TagString: Enemy
@@ -122,28 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 2142312482560765106}
---- !u!114 &2005568376720667134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956395347019820863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 037528ab7b06bb14099324938aa30a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 1
-  range: 0.68
-  damage: 1
-  colliderDistance: -1.16
-  boxCollider: {fileID: 4363971174038530264}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  aiPath: {fileID: 2142312482560765106}
-  anim: {fileID: 5203562019479615413}
 --- !u!61 &4363971174038530264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,6 +167,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.97009945, y: 0.564075}
   m_EdgeRadius: 0
+--- !u!114 &6749737862985978243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956395347019820863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb261deacb6ee32428ad690981b0b966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1
+  range: 0.68
+  damage: 1
+  colliderDistance: -1.16
+  boxCollider: {fileID: 4363971174038530264}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  aiPath: {fileID: 2142312482560765106}
+  anim: {fileID: 5203562019479615413}
 --- !u!1 &2482751649219359095
 GameObject:
   m_ObjectHideFlags: 0

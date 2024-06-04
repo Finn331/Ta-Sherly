@@ -2190,7 +2190,6 @@ MonoBehaviour:
   - {fileID: 463534917}
   cameraShake: {fileID: 1058167659}
   hurtSound: {fileID: 8300000, guid: 6615c8e9677333047a32cf3c9968de51, type: 3}
-  dieSound: {fileID: 0}
 --- !u!114 &463534915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23873,6 +23872,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 463534912}
+    - target: {fileID: 6749737862985978243, guid: 17d9a422fb9d7184ca933fbc3f332191, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a36e6a092bcaea4cb0a5da395846690, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

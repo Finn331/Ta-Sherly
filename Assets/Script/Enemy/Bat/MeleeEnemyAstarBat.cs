@@ -1,7 +1,7 @@
 using Pathfinding;
 using UnityEngine;
 
-public class MeleeEnemy : MonoBehaviour
+public class MeleeEnemyAstarBat : MonoBehaviour
 {
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -19,7 +19,8 @@ public class MeleeEnemy : MonoBehaviour
     [Header("Audio Clip")]
     public AudioClip attackSound;
 
-    [Header("References")]
+    [Header("Reference")]
+    public AIPath aiPath;
     public Animator anim;
     private PlayerStatus playerHealth;
     private EnemyPatrol enemyPatrol;
@@ -36,6 +37,7 @@ public class MeleeEnemy : MonoBehaviour
         //Attack only when player in sight?
         if (PlayerInSight())
         {
+            DisablePath();
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
@@ -43,9 +45,14 @@ public class MeleeEnemy : MonoBehaviour
             }
         }
 
+        if (!PlayerInSight())
+        {
+            EnablePath();
+        }
+
         if (enemyPatrol != null)
             enemyPatrol.enabled = !PlayerInSight();
-        
+
     }
 
     private bool PlayerInSight()
@@ -70,7 +77,17 @@ public class MeleeEnemy : MonoBehaviour
     private void DamagePlayer()
     {
         if (PlayerInSight())
-            AudioManager.instance.PlaySound(attackSound);
             playerHealth.TakeDamage(damage);
+            AudioManager.instance.PlaySound(attackSound);
+    }
+
+    void DisablePath()
+    {
+        aiPath.enabled = false;
+    }
+
+    void EnablePath()
+    {
+        aiPath.enabled = true;
     }
 }
