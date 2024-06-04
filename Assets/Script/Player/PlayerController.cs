@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;   
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float speed; // Current speed
     public float jumpingPower;
     public float wallCheckDistance;
+
+    public bool canSprint = true; // Boolean to control whether the player can sprint or not
 
     private float defaultSpeed; // Default speed
     private float horizontal;
@@ -28,6 +30,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Script Reference")]
     public LevelsManager levelsManager;
+
+    [Header("Audio Clip")]
+    public AudioClip jumpSound;
+    public AudioClip landingSound;
 
     private Animator anim;
     private bool isPlayingFootstep;
@@ -52,13 +58,13 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)) // Check if "Shift" key is pressed
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canSprint) // Check if "Shift" key is pressed and canSprint is true
         {
             isSprinting = true;
             speed = sprintSpeed; // Set the speed to sprint speed
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift)) // Check if "Shift" key is released
+        if (Input.GetKeyUp(KeyCode.LeftShift) || !canSprint) // Check if "Shift" key is released or canSprint is false
         {
             isSprinting = false;
             speed = defaultSpeed; // Set the speed back to default
@@ -124,12 +130,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpsRemaining = 1; // Reset jumps remaining when grounded
+            AudioManager.instance.PlaySound(jumpSound);
             anim.SetTrigger("jump");
         }
         else if (jumpsRemaining > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpsRemaining--; // Decrease jumps remaining when performing a double jump
+            AudioManager.instance.PlaySound(jumpSound);
             anim.SetTrigger("jump");
         }
     }
@@ -176,5 +184,13 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(footstep.length);
         }
         isPlayingFootstep = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            AudioManager.instance.PlaySound(landingSound);
+        }
     }
 }

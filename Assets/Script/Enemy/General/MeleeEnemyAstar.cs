@@ -16,7 +16,10 @@ public class MeleeEnemyAstar : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
-    //References
+    [Header("Audio Clip")]
+    public AudioClip attackSound;
+
+    [Header("Reference")]
     public AIPath aiPath;
     public Animator anim;
     private PlayerStatus playerHealth;
@@ -75,6 +78,7 @@ public class MeleeEnemyAstar : MonoBehaviour
     {
         if (PlayerInSight())
             playerHealth.TakeDamage(damage);
+            AudioManager.instance.PlaySound(attackSound);
     }
 
     void DisablePath()
