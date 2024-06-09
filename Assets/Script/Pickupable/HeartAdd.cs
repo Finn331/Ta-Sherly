@@ -12,24 +12,27 @@ public class HeartAdd : MonoBehaviour
     [Header("Audio Clip")]
     [SerializeField] AudioClip heartSound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            playerStatus.currHealth += healValue;
-            AudioManager.instance.PlaySound(heartSound);
+            if (playerStatus.currHealth == playerStatus.maxHealth)
+            {
+                return;
+            }
+            if (playerStatus.currHealth <= playerStatus.maxHealth)
+            {
+                Heal();
+            }
+            
+            
         }
+    }
+
+    void Heal()
+    {
+        playerStatus.currHealth += healValue;
+        AudioManager.instance.PlaySound(heartSound);
+        Destroy(gameObject);
     }
 }

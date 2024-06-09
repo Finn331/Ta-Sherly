@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStatus: {fileID: 0}
+  coinSound: {fileID: 8300000, guid: 4666180d557f71641955b9aff1ca9092, type: 3}
 --- !u!95 &918490060814589545
 Animator:
   serializedVersion: 5

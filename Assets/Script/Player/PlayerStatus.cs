@@ -11,7 +11,6 @@ public class PlayerStatus : MonoBehaviour
     public int score;
     private bool dead;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI healthText;
 
     private Animator anim;
     private float timerHurt = 1f;
@@ -33,7 +32,8 @@ public class PlayerStatus : MonoBehaviour
 
     [Header("Audio Clip")]
     public AudioClip hurtSound;
-    //public AudioClip dieSound;
+    public AudioClip dieSound;
+    public AudioClip respawnSound;
 
     void Awake()
     {
@@ -104,7 +104,6 @@ public class PlayerStatus : MonoBehaviour
 
     public void Health()
     {
-        healthText.text = "Health: " + currHealth.ToString();
         if (currHealth == 0 && !dead)
         {
             Die();
@@ -126,7 +125,7 @@ public class PlayerStatus : MonoBehaviour
         rb.isKinematic = false; // Membuat Rigidbody2D kembali dipengaruhi oleh fisika
         dead = false;
         EnableSprite();
-
+        AudioManager.instance.PlaySound(respawnSound);
         StartCoroutine(Invunerability());
 
         foreach (Component component in components)
