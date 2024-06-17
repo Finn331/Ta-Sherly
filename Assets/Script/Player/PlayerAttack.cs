@@ -11,10 +11,12 @@ public class PlayerAttack : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    public bool isMoving;
 
     private Animator anim;
     private PlayerController playerMovement;
     private float cooldownTimer = Mathf.Infinity;
+
 
     private void Awake()
     {
@@ -28,12 +30,21 @@ public class PlayerAttack : MonoBehaviour
         {
             anim.SetBool("isGrounded", true);
 
-            if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown/* && playerMovement.canAttack()*/
-                && Time.timeScale > 0)
+            //if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown/* && playerMovement.canAttack()*/
+            //    && Time.timeScale > 0)
+            //{
+            //    Attack();
+            //    //anim.SetTrigger("attack");
+                
+            //}
+
+            if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && Time.timeScale > 0 && isMoving)
+            {
+                MoveAttack();
+            }
+            else if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && Time.timeScale > 0 && !isMoving)
             {
                 Attack();
-                //anim.SetTrigger("attack");
-                
             }
         }
 
@@ -63,5 +74,16 @@ public class PlayerAttack : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.01f, groundLayer);
 
+    }
+
+    private void MoveAttack()
+    {
+        anim.SetTrigger("moveAttack");
+        
+        AudioManager.instance.PlaySound(fireballSound);
+        cooldownTimer = 0;
+
+        fireballs[FindFireball()].transform.position = firePoint.position;
+        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 }

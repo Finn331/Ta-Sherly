@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Script Reference")]
     public LevelsManager levelsManager;
+    private PlayerAttack playerAttack;
 
     [Header("Audio Clip")]
     public AudioClip jumpSound;
@@ -47,6 +48,9 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         footstepAudioSource = GetComponent<AudioSource>();
         isPlayingFootstep = false;
+
+        // Script Reference for private variables
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     private void Update()
@@ -83,6 +87,9 @@ public class PlayerController : MonoBehaviour
     {
         // Move the player horizontally
         Move();
+
+        // Check if the player is moving
+        IsMoving();
     }
     public void InputCheck()
     {
@@ -168,9 +175,17 @@ public class PlayerController : MonoBehaviour
         return hit.collider != null;
     }
 
-    public bool canAttack()
+    public void IsMoving()
     {
-        return horizontal == 0 && IsGrounded();
+        if (Mathf.Abs(horizontal) > 0)
+        {
+            playerAttack.isMoving = true;
+        }
+        else
+        {
+            playerAttack.isMoving = false;
+            anim.SetBool("isMoving", false);
+        }
     }
 
     private IEnumerator PlayFootstepSound()
