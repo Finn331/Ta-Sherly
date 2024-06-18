@@ -24,14 +24,14 @@ AnimationClip:
       value: {fileID: 494629763, guid: af34473056f637742874d58a49359af2, type: 3}
     - time: 0.2
       value: {fileID: 1718505985, guid: af34473056f637742874d58a49359af2, type: 3}
-    - time: 0.5
+    - time: 0.4
       value: {fileID: -1434922129, guid: af34473056f637742874d58a49359af2, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 10
+  m_SampleRate: 5
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}

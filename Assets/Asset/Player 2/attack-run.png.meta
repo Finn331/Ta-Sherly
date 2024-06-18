@@ -147,7 +147,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: attack-run_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 13
+        width: 145
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f274928f3e4f7df4b88810cedc81c704
+      internalID: -2011396542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack-run_1
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 13
+        width: 144
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f9c5415c2f8194fb1f6e6fe2d3f25d
+      internalID: -1225586585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack-run_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 13
+        width: 145
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4e08b46fdf26a449d6f4b3e5cd4a49
+      internalID: 1864389603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack-run_3
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 13
+        width: 145
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f465e08e2821847ac0ce601978b08d
+      internalID: -131701423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack-run_4
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 13
+        width: 145
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a16ac6673db6348bad8c20bc446d6a
+      internalID: 1746610546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack-run_5
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 11
+        width: 145
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11fc288ee510164ab78f553c0f49171
+      internalID: -1767042037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +284,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      attack-run_0: -2011396542
+      attack-run_1: -1225586585
+      attack-run_2: 1864389603
+      attack-run_3: -131701423
+      attack-run_4: 1746610546
+      attack-run_5: -1767042037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
