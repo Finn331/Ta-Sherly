@@ -410,7 +410,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 438383744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1692142713}
+        m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
+        m_MethodName: SelectCharacter2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &438383744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 995332564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1692142713}
+        m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
+        m_MethodName: SelectCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &995332564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,9 +774,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character1Button: {fileID: 995332563}
   character2Button: {fileID: 438383743}
-  characterPrefabs:
-  - {fileID: 6635608073480013016, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
-  - {fileID: 1739425241431377803, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
+  character1Prefabs: {fileID: 6635608073480013016, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
+  character2Prefabs: {fileID: 1739425241431377803, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
   nextSceneName: Level 1
 --- !u!1 &1830227678
 GameObject:

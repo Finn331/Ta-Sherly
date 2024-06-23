@@ -16,6 +16,6 @@ public class CamTrigger : MonoBehaviour
         {
             cameraFollow.offset.x = newOffseet;
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

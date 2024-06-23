@@ -1496,6 +1496,7 @@ GameObject:
   - component: {fileID: 689862390}
   - component: {fileID: 689862389}
   - component: {fileID: 689862388}
+  - component: {fileID: 689862391}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -1616,6 +1617,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689862386}
   m_CullTransparentMesh: 1
+--- !u!114 &689862391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689862386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b63621a3aa0c624bafafae7ac5e3e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 689862386}
 --- !u!1 &724119633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,37 +3618,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986287606}
   m_CullTransparentMesh: 1
---- !u!1 &2110795465
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2110795466}
-  m_Layer: 0
-  m_Name: Save Manager *NOT IMPLEMENTED
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2110795466
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110795465}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 365.90118, y: 146.06879, z: 0.028709888}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2114684915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,6 +3704,5 @@ SceneRoots:
   - {fileID: 458996676}
   - {fileID: 476384061}
   - {fileID: 1828461220}
-  - {fileID: 2110795466}
   - {fileID: 1542853885}
   - {fileID: 1559939369}
