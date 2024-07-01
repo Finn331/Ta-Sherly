@@ -6,10 +6,10 @@ public class Door : MonoBehaviour
 {
     public GameObject interactButton;
     public GameObject teleportTargetB;
-
+    public GameObject cameraObject;  // Referensi ke GameObject Kamera
+    public GameObject cameraObject2;
 
     private bool canTeleport = false;
-
 
     // Teleport function
     private void TeleportToB()
@@ -36,6 +36,23 @@ public class Door : MonoBehaviour
         }
     }
 
+    private void MoveCamera()
+    {
+        //// Move the camera to the specified position
+        //if (cameraObject != null)
+        //{
+        //    Vector3 newCameraPosition = cameraObject.transform.position;
+        //    newCameraPosition.y = -10.84f;
+        //    cameraObject.transform.position = newCameraPosition;
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("Camera object not assigned!");
+        //}
+        cameraObject.SetActive(false);
+        cameraObject2.SetActive(true);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -60,6 +77,7 @@ public class Door : MonoBehaviour
         if (canTeleport && Input.GetKeyDown(KeyCode.E))
         {
             TeleportToB();
+            MoveCamera(); // Pindahkan kamera hanya ketika tombol "E" ditekan
             Debug.Log("teleport ke " + name);
         }
     }

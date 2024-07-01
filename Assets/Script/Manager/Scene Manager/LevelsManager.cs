@@ -25,8 +25,8 @@ public class LevelsManager : MonoBehaviour
     [Header("Audio Source Setting")]
     public AudioSource lavaAudioSource;
 
-    [Header("Score Level Setting")]
-    public TextMeshProUGUI scoreText;
+    //[Header("Score Level Setting")]
+    //public TextMeshProUGUI scoreText;
 
     private int character1;
     private int character2;
@@ -66,10 +66,7 @@ public class LevelsManager : MonoBehaviour
         //InputCheck();
     }
 
-    //public void Score()
-    //{
-    //    scoreText.text = "Score: " + score.ToString();
-    //}
+    
 
     public void PauseGame()
     {

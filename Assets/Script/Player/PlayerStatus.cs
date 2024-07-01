@@ -8,9 +8,8 @@ public class PlayerStatus : MonoBehaviour
     public int maxHealth;
     public int currHealth;
     public int damage;
-    public int score;
     private bool dead;
-    public TextMeshProUGUI scoreText;
+    
 
     private Animator anim;
     private float timerHurt = 1f;
@@ -29,6 +28,10 @@ public class PlayerStatus : MonoBehaviour
 
     [Header("Game Feels")]
     public CameraShake cameraShake;
+
+    [Header("Score Setting")]
+    public TextMeshProUGUI scoreText;
+    public int score;
 
     [Header("Audio Clip")]
     public AudioClip hurtSound;
@@ -50,7 +53,7 @@ public class PlayerStatus : MonoBehaviour
     {
         currTimer += Time.deltaTime;
         Health();
-        
+        Score();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -121,7 +124,10 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    
+    public void Score()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
 
     public void Respawn()
     {
