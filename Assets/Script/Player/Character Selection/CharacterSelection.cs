@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public Button character1Button;
-    public Button character2Button;
+    //public Button character1Button;
+    //public Button character2Button;
     public GameObject character1Prefabs;
     public GameObject character2Prefabs;
     public string nextSceneName;
@@ -47,5 +47,10 @@ public class CharacterSelection : MonoBehaviour
     private void LoadNextScene()
     {
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Mainmenu");
     }
 }

@@ -34,9 +34,10 @@ public class PlayerStatus : MonoBehaviour
     public AudioClip hurtSound;
     public AudioClip dieSound;
     public AudioClip respawnSound;
-
+    public AudioClip ashLava;
     void Awake()
     {
+        
         currHealth = maxHealth;
         anim = GetComponent<Animator>();
         currTimer = timerHurt;
@@ -49,7 +50,7 @@ public class PlayerStatus : MonoBehaviour
     {
         currTimer += Time.deltaTime;
         Health();
-        Score();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +58,11 @@ public class PlayerStatus : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle") && !invulnerable)
         {
             TakeDamage(1);
+        }
+
+        if (collision.gameObject.CompareTag("Lava"))
+        {
+            AudioManager.instance.PlaySound(ashLava);
         }
     }
 
@@ -89,8 +95,12 @@ public class PlayerStatus : MonoBehaviour
         {
             anim.SetTrigger("hurt");
             AudioManager.instance.PlaySound(hurtSound);
-            cameraShake.ShakeCamera();
+            
             StartCoroutine(Invunerability());
+            if (Time.timeScale > 0)
+            {
+                cameraShake.ShakeCamera();
+            }
         }
         else
         {
@@ -111,10 +121,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    public void Score()
-    {
-        scoreText.text = "Score: " + score.ToString();
-    }
+    
 
     public void Respawn()
     {
