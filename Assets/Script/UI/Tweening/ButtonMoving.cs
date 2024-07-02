@@ -6,7 +6,12 @@ public class ButtonMoving : MonoBehaviour
 
     void Start()
     {
-        // Rotate around the local Z-axis (forward axis) with a duration of 1 second and looping infinitely
-        LeanTween.rotateAroundLocal(Button, Vector3.forward, 16f, 1f).setEase(LeanTweenType.easeOutCubic).setLoopType(LeanTweenType.pingPong);
+        // Rotate around the local Z-axis from -4 to 4 degrees
+        LeanTween.value(gameObject, UpdateRotation, -4f, 4f, 1f).setEase(LeanTweenType.easeOutCubic).setLoopPingPong();
+    }
+
+    void UpdateRotation(float zRotation)
+    {
+        Button.transform.localRotation = Quaternion.Euler(0, 0, zRotation);
     }
 }

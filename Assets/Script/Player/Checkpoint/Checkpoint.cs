@@ -12,6 +12,10 @@ public class Checkpoint : MonoBehaviour
     [Header("Script Reference")]
     public LevelsManager levelsManager;
 
+    [Header("Camera Setting")]
+    public GameObject cameraA;
+    public GameObject cameraB;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -38,6 +42,7 @@ public class Checkpoint : MonoBehaviour
 
         playerStatus.Respawn();
         transform.position = currentCheckpoint.position;
+        MoveCamera();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,6 +54,12 @@ public class Checkpoint : MonoBehaviour
             collision.GetComponent<Collider2D>().enabled = false;
             collision.GetComponent<Animator>().SetTrigger("triggered");
         }
+    }
+
+    private void MoveCamera()
+    {
+        cameraB.SetActive(false);
+        cameraA.SetActive(true);
     }
 
     //IEnumerator AnimationCheck()

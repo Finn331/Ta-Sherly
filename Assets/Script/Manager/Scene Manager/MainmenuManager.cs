@@ -9,6 +9,7 @@ public class MainmenuManager : MonoBehaviour
 {
     [Header("Setting Panel")]
     public GameObject settingPanel;
+    public GameObject settingButton;
 
     [Header("Character Selection Settings")]
     public GameObject characterPanel;
@@ -22,6 +23,12 @@ public class MainmenuManager : MonoBehaviour
     public GameObject headerMenu;
     public GameObject actionPanel;
     public GameObject buttonPanel;
+    public GameObject backgroundMainmenu;
+
+    [Header("Menu Belajar Setting")]
+    public GameObject menuBelajarBackground;
+    public GameObject menuBelajarPanel;
+    public GameObject menuBelajarButton;
 
     [Header("Loading Screen")]
     [SerializeField] GameObject loadingScreen;
@@ -54,16 +61,18 @@ public class MainmenuManager : MonoBehaviour
         characterPanel.SetActive(true);
         characterSelectionButtonPanel.SetActive(true);
         backgroundSelection.SetActive(true);
+
         headerMenu.SetActive(false);
         actionPanel.SetActive(false);
         buttonPanel.SetActive(false);
+        backgroundMainmenu.SetActive(false);
     }
 
     public void Setting()
     {
         settingPanel.SetActive(true);
-
-        LeanTween.scale(settingPanel, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+        settingButton.SetActive(true);
+        LeanTween.scale(settingButton, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
     }
 
     public void QuitGame()
@@ -74,8 +83,36 @@ public class MainmenuManager : MonoBehaviour
     // Button Functions
     public void SettingBack()
     {
-        LeanTween.scale(settingPanel, new Vector3(0, 0, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.delayedCall(0.5f, () => settingPanel.SetActive(false));
+        settingPanel.SetActive(false);
+        settingButton.SetActive(false);
+        settingButton.transform.localScale = Vector3.zero;
+    }
+
+    // Menu Belajar
+    public void MenuBelajar()
+    {
+        menuBelajarBackground.SetActive(true);
+        menuBelajarButton.SetActive(true);
+        menuBelajarPanel.SetActive(true);
+        LeanTween.scale(menuBelajarPanel, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+
+        headerMenu.SetActive(false);
+        actionPanel.SetActive(false);
+        buttonPanel.SetActive(false);
+        backgroundMainmenu.SetActive(false);
+    }
+
+    public void MenuBelajarBack()
+    {
+        menuBelajarButton.SetActive(false);
+        menuBelajarBackground.SetActive(false);
+        menuBelajarPanel.transform.localScale = Vector3.zero;
+        menuBelajarPanel.SetActive(false);
+
+        headerMenu.SetActive(true);
+        actionPanel.SetActive(true);
+        buttonPanel.SetActive(true);
+        backgroundMainmenu.SetActive(true);
     }
 
     // Selection Character
@@ -100,9 +137,11 @@ public class MainmenuManager : MonoBehaviour
         characterPanel.SetActive(false);
         characterSelectionButtonPanel.SetActive(false);
         backgroundSelection.SetActive(false);
+
         headerMenu.SetActive(true);
         actionPanel.SetActive(true);
         buttonPanel.SetActive(true);
+        backgroundMainmenu.SetActive(true);
     }
 
     // Async Loader

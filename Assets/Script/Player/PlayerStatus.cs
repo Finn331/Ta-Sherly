@@ -38,6 +38,9 @@ public class PlayerStatus : MonoBehaviour
     public AudioClip dieSound;
     public AudioClip respawnSound;
     public AudioClip ashLava;
+
+    
+
     void Awake()
     {
         
