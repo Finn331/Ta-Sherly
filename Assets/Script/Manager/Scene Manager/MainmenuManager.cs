@@ -19,6 +19,10 @@ public class MainmenuManager : MonoBehaviour
     public GameObject character2Prefabs;
     private bool characterSelected;
 
+    [Header("Selection Level Setting")]
+    public GameObject selectionLevelPanel;
+    public GameObject selectionLevelButtonPanel;
+
     [Header("Button Panel & Header Mainmenu")]
     public GameObject headerMenu;
     public GameObject actionPanel;
@@ -144,11 +148,33 @@ public class MainmenuManager : MonoBehaviour
         backgroundMainmenu.SetActive(true);
     }
 
+    // Select Level
+    public void SelectLevel()
+    {
+        characterPanel.SetActive(false);
+        characterSelectionButtonPanel.SetActive(false);
+        backgroundSelection.SetActive(false);
+
+        selectionLevelPanel.SetActive(true);
+        selectionLevelButtonPanel.SetActive(true);
+    }
+
+    public void SelectLevelBack()
+    {
+        characterPanel.SetActive(true);
+        characterSelectionButtonPanel.SetActive(true);
+        backgroundSelection.SetActive(true);
+
+        selectionLevelPanel.SetActive(false);
+        selectionLevelButtonPanel.SetActive(false);
+    }
+
     // Async Loader
     public void LoadingLevelBtn(string levelToLoad)
     {
         menuCanvas.SetActive(false);
         loadingScreen.SetActive(true);
+        backgroundSelection.SetActive(false);
 
         StartCoroutine(LoadLevel(levelToLoad));
     }
