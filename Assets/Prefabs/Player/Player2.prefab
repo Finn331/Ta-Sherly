@@ -25,7 +25,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &925837976264713888
 Transform:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1346733501
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 5
   m_Sprite: {fileID: -1956772693, guid: 2e6f86c1a9f9d1d43930954ddf4cff79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -231,8 +231,6 @@ MonoBehaviour:
   maxHealth: 3
   currHealth: 0
   damage: 0
-  score: 0
-  scoreText: {fileID: 0}
   iFramesDuration: 1
   numberOfFlashes: 2
   components:
@@ -240,9 +238,12 @@ MonoBehaviour:
   - {fileID: 1036278845478020199}
   - {fileID: 5185483717750355201}
   cameraShake: {fileID: 0}
+  scoreText: {fileID: 0}
+  score: 0
   hurtSound: {fileID: 8300000, guid: 88b2d411f6684484b92158c7063f51e4, type: 3}
   dieSound: {fileID: 8300000, guid: ae717ca347a7e68489804cac312e7df9, type: 3}
   respawnSound: {fileID: 8300000, guid: c69a03f76c836944a886c30462fc69b5, type: 3}
+  ashLava: {fileID: 0}
 --- !u!114 &3962959995609267010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +309,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 8300000, guid: ee5c1788f37d1904bafee652062dcc2f, type: 3}
   levelsManager: {fileID: 0}
+  cameraA: {fileID: 0}
+  cameraB: {fileID: 0}
 --- !u!114 &7385934999447552403
 MonoBehaviour:
   m_ObjectHideFlags: 0
