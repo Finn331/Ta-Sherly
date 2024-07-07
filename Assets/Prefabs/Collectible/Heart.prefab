@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healValue: 1
-  playerStatus: {fileID: 0}
-  heartSound: {fileID: 0}
+  heartSound: {fileID: 8300000, guid: 73d8a956f3eb54a44bde7173cc333269, type: 3}
 --- !u!61 &1752302403579830190
 BoxCollider2D:
   m_ObjectHideFlags: 0
