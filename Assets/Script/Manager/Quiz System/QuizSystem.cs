@@ -10,9 +10,11 @@ public class QuizSystem : MonoBehaviour
     public GameObject quizPanel;
     public GameObject quizTrigger;
     public Button rightAnswer;
+    public GameObject kamuBenarImage;
     public Button falseAnswer;
+    public GameObject kamuSalahImage;
     public float textDuration = 1;
-    private Color originalColor;
+    public LeanTweenType easingType;
 
     [Header("Script Reference")]
     public LevelsManager levelsManager;
@@ -20,15 +22,15 @@ public class QuizSystem : MonoBehaviour
 
     void Start()
     {
-        originalColor = rightAnswer.GetComponent<Image>().color;
+        //initialization code
     }
 
     public void TrueAnswer()
     {
-        quizPanel.SetActive(false);
+        StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
         GameObject.Destroy(quizTrigger);
-        //SaveManager.instance.coin += 5;
+        LeanTween.scale(kamuBenarImage, new Vector3(1, 1, 1), 0.5f).setEase(easingType);
         levelsManager.isPaused = false;
         playerController.enabled = true;
         Cursor.visible = false;
@@ -37,27 +39,19 @@ public class QuizSystem : MonoBehaviour
 
     public void WrongAnswer()
     {
+        StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
-        // Mengubah warna tombol yang salah menjadi merah
-        falseAnswer.GetComponent<Image>().color = Color.red;
-
-        // Mengubah warna tombol yang benar menjadi hijau
-        rightAnswer.GetComponent<Image>().color = Color.green;
+        LeanTween.scale(kamuSalahImage, new Vector3(1, 1, 1), 0.5f).setEase(easingType);
         levelsManager.isPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        // Menjalankan coroutine untuk mengatur ulang warna setelah durasi tertentu
-        StartCoroutine(ResetButtonColors());
-
-        // Mengaktifkan panel kuis dan mengatur ulang waktu
-        
-    }
-
-    private IEnumerator ResetButtonColors()
-    {
-        yield return new WaitForSeconds(textDuration);
-        quizPanel.SetActive(false);
         playerController.enabled = true;
         GameObject.Destroy(quizTrigger);
+    }
+
+    private IEnumerator DeactivateQuizPanelWithDelay()
+    {
+        yield return new WaitForSeconds(0.8f);
+        quizPanel.SetActive(false);
     }
 }

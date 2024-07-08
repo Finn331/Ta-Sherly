@@ -10,6 +10,12 @@ public class Door : MonoBehaviour
     public GameObject cameraObject2;
 
     private bool canTeleport = false;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Teleport function
     private void TeleportToB()
@@ -59,6 +65,8 @@ public class Door : MonoBehaviour
         {
             interactButton.SetActive(true);
             canTeleport = true;
+            anim.SetTrigger("open");
+            anim.SetBool("isOpen", true);
         }
     }
 
@@ -68,6 +76,7 @@ public class Door : MonoBehaviour
         {
             interactButton.SetActive(false);
             canTeleport = false;
+            anim.SetBool("isOpen", false);
         }
     }
 
