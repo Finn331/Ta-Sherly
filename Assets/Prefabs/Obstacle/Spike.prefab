@@ -168,4 +168,4 @@ MonoBehaviour:
   damage: 1
   activationDelay: 0.5
   activeTime: 0.4
-  spikeSound: {fileID: 0}
+  spikeSound: {fileID: 8300000, guid: a02ca625f38677342b06f910e8a78309, type: 3}

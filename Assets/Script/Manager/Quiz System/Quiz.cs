@@ -7,6 +7,7 @@ public class Quiz : MonoBehaviour
     public GameObject quizPanel;
     public LevelsManager levelsManager;
     public PlayerController playerController;
+    public PlayerController playerController2;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +17,7 @@ public class Quiz : MonoBehaviour
             Time.timeScale = 0;
             levelsManager.isPaused = true;
             playerController.enabled = false;
+            playerController2.enabled = false;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
