@@ -3941,6 +3941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuBelajarPanel: {fileID: 1826413443}
   menuBelajarButton: {fileID: 1453896308}
+  menuBelajarHeading: {fileID: 397499800}
   mengenalAksaraPanel: {fileID: 1429182399}
   buttonBackMengenalAksara: {fileID: 987533336}
   backButton: {fileID: 27193369}
@@ -3960,6 +3961,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461374a6dd929164f8f72a2127548c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonAngka0: {fileID: 1655369061}
+  buttonAngka1: {fileID: 413317213}
+  buttonAngka2: {fileID: 1873097298}
+  buttonAngka3: {fileID: 1607980509}
+  buttonAngka4: {fileID: 1230402714}
+  buttonAngka5: {fileID: 376751825}
+  buttonAngka6: {fileID: 1583943640}
+  buttonAngka7: {fileID: 1770183807}
+  buttonAngka8: {fileID: 510123896}
+  buttonAngka9: {fileID: 816783189}
   aClipButton: {fileID: 1232914203}
   iClipButton: {fileID: 1726003433}
   uClipButton: {fileID: 1524128070}
@@ -3990,6 +4001,16 @@ MonoBehaviour:
   vaClipButton: {fileID: 1559617949}
   xaClipButton: {fileID: 537432359}
   zaClipButton: {fileID: 1249456459}
+  angka0: {fileID: 8300000, guid: 4e9d811383220344dbb4b44f1cb20884, type: 3}
+  angka1: {fileID: 8300000, guid: cb07ebbb42b1d8d4bab1cb66fce9d50d, type: 3}
+  angka2: {fileID: 8300000, guid: 07b06c5a04393ef439fcc8e0292c6aba, type: 3}
+  angka3: {fileID: 8300000, guid: cf4fcbbfbbccf594abd97d43ea51e821, type: 3}
+  angka4: {fileID: 8300000, guid: 8d18cb09d1ddae145a839ba87e01d63b, type: 3}
+  angka5: {fileID: 8300000, guid: 7196a08ec1fa0884180077da39d983bf, type: 3}
+  angka6: {fileID: 8300000, guid: d31d4857e00a65047a59f7cb88b5ccae, type: 3}
+  angka7: {fileID: 8300000, guid: 7cc905b201fe17e41b1c7dfc8c591fa1, type: 3}
+  angka8: {fileID: 8300000, guid: d48d13bba2a2b73418844bfcabc2ab0c, type: 3}
+  angka9: {fileID: 8300000, guid: dfde02e6e535ce142b1c9c2593770b90, type: 3}
   aClip: {fileID: 8300000, guid: d617e45eeb6c3e942bcb210da9f41fe2, type: 3}
   iClip: {fileID: 8300000, guid: 8aaf02b9c98ef794b84c26cc2f0fce8b, type: 3}
   uClip: {fileID: 8300000, guid: 0dbe2f155812b2742a85cdb9db477df5, type: 3}

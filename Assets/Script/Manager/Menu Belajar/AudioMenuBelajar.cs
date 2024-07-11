@@ -5,6 +5,18 @@ using UnityEngine.UI;
 
 public class AudioMenuBelajar : MonoBehaviour
 {
+    [Header("Button Angka")]
+    public Button buttonAngka0;
+    public Button buttonAngka1;
+    public Button buttonAngka2;
+    public Button buttonAngka3;
+    public Button buttonAngka4;
+    public Button buttonAngka5;
+    public Button buttonAngka6;
+    public Button buttonAngka7;
+    public Button buttonAngka8;
+    public Button buttonAngka9;
+
     [Header("Button Swara")]
     public Button aClipButton;
     public Button iClipButton;
@@ -38,6 +50,19 @@ public class AudioMenuBelajar : MonoBehaviour
     public Button vaClipButton;
     public Button xaClipButton;
     public Button zaClipButton;
+
+    // Audio Clip Section
+    [Header("Audio Clip Angka")]
+    [SerializeField] private AudioClip angka0;
+    [SerializeField] private AudioClip angka1;
+    [SerializeField] private AudioClip angka2;
+    [SerializeField] private AudioClip angka3;
+    [SerializeField] private AudioClip angka4;
+    [SerializeField] private AudioClip angka5;
+    [SerializeField] private AudioClip angka6;
+    [SerializeField] private AudioClip angka7;
+    [SerializeField] private AudioClip angka8;
+    [SerializeField] private AudioClip angka9;
 
     [Header("Audio Clip Swara")]
     [SerializeField] private AudioClip aClip;
@@ -79,6 +104,8 @@ public class AudioMenuBelajar : MonoBehaviour
     {
         allButtons = new List<Button>
         {
+            buttonAngka0, buttonAngka1, buttonAngka2, buttonAngka3, buttonAngka4, buttonAngka5, buttonAngka6,
+            buttonAngka7, buttonAngka8, buttonAngka9,
             aClipButton, iClipButton, uClipButton, eClipButton, e2ClipButton, euClipButton, oClipButton,
             kaClipButton, gaClipButton, ngaClipButton, caClipButton, jaClipButton, nyaClipButton, taClipButton,
             daClipButton, naClipButton, paClipButton, baClipButton, maClipButton, yaClipButton, raClipButton,
@@ -87,6 +114,17 @@ public class AudioMenuBelajar : MonoBehaviour
         };
 
         // Assigning the button click events to the corresponding methods
+        AssignButtonClick(buttonAngka0, PlayAngka0Clip);
+        AssignButtonClick(buttonAngka1, PlayAngka1Clip);
+        AssignButtonClick(buttonAngka2, PlayAngka2Clip);
+        AssignButtonClick(buttonAngka3, PlayAngka3Clip);
+        AssignButtonClick(buttonAngka4, PlayAngka4Clip);
+        AssignButtonClick(buttonAngka5, PlayAngka5Clip);
+        AssignButtonClick(buttonAngka6, PlayAngka6Clip);
+        AssignButtonClick(buttonAngka7, PlayAngka7Clip);
+        AssignButtonClick(buttonAngka8, PlayAngka8Clip);
+        AssignButtonClick(buttonAngka9, PlayAngka9Clip);
+
         AssignButtonClick(aClipButton, PlayAClip);
         AssignButtonClick(iClipButton, PlayIClip);
         AssignButtonClick(uClipButton, PlayUClip);
@@ -148,17 +186,68 @@ public class AudioMenuBelajar : MonoBehaviour
 
     private void AnimateButton(GameObject button)
     {
-        LeanTween.scale(button, new Vector3(1.1f, 1.1f, 1.1f), 0.5f)
+        LeanTween.scale(button, new Vector3(1.1f, 1.1f, 1.1f), 0.7f)
             .setEase(LeanTweenType.easeOutQuad)
             .setOnComplete(() =>
             {
-                LeanTween.scale(button, new Vector3(1f, 1f, 1f), 0.5f)
+                LeanTween.scale(button, new Vector3(1f, 1f, 1f), 0.7f)
                     .setEase(LeanTweenType.easeOutQuad)
                     .setOnComplete(() =>
                     {
                         EnableAllButtons(); // Mengaktifkan kembali semua tombol setelah animasi selesai
                     });
             });
+    }
+
+    // Audio Angka
+    public void PlayAngka0Clip()
+    {
+        AudioManager.instance.PlaySound(angka0);
+    }
+
+    public void PlayAngka1Clip()
+    {
+        AudioManager.instance.PlaySound(angka1);
+    }
+
+    public void PlayAngka2Clip()
+    {
+        AudioManager.instance.PlaySound(angka2);
+    }
+
+    public void PlayAngka3Clip()
+    {
+        AudioManager.instance.PlaySound(angka3);
+    }
+
+    public void PlayAngka4Clip()
+    {
+        AudioManager.instance.PlaySound(angka4);
+    }
+
+    public void PlayAngka5Clip()
+    {
+        AudioManager.instance.PlaySound(angka5);
+    }
+
+    public void PlayAngka6Clip()
+    {
+        AudioManager.instance.PlaySound(angka6);
+    }
+
+    public void PlayAngka7Clip()
+    {
+        AudioManager.instance.PlaySound(angka7);
+    }
+
+    public void PlayAngka8Clip()
+    {
+        AudioManager.instance.PlaySound(angka8);
+    }
+
+    public void PlayAngka9Clip()
+    {
+        AudioManager.instance.PlaySound(angka9);
     }
 
     // Audio Swara

@@ -7,6 +7,7 @@ public class MenuBelajar : MonoBehaviour
     [Header("Menu Belajar Panel")]
     public GameObject menuBelajarPanel;
     public GameObject menuBelajarButton;
+    public GameObject menuBelajarHeading;
 
     [Header("Mengenal Aksara Sunda Setup")]
     public GameObject mengenalAksaraPanel;
@@ -42,6 +43,7 @@ public class MenuBelajar : MonoBehaviour
     {
         menuBelajarPanel.SetActive(false);
         menuBelajarButton.SetActive(false);
+        menuBelajarHeading.SetActive(false);
         mengenalAksaraPanel.SetActive(true);
         buttonBackMengenalAksara.SetActive(true);
     }
@@ -50,6 +52,7 @@ public class MenuBelajar : MonoBehaviour
     {
         menuBelajarPanel.SetActive(true);
         menuBelajarButton.SetActive(true);
+        menuBelajarHeading.SetActive(true);
         mengenalAksaraPanel.SetActive(false);
         buttonBackMengenalAksara.SetActive(false);
     }
@@ -60,6 +63,7 @@ public class MenuBelajar : MonoBehaviour
         buttonBackMengenalAksara.SetActive(true);
         menuBelajarPanel.SetActive(false);
         menuBelajarButton.SetActive(false);
+        menuBelajarHeading.SetActive(false);
         backButton.SetActive(false);
         aksaraNgalegena.SetActive(false);
         aksaraSwara.SetActive(false);
@@ -73,6 +77,7 @@ public class MenuBelajar : MonoBehaviour
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);
         menuBelajarButton.SetActive(false);
+        menuBelajarHeading.SetActive(false);
         mengenalAksaraPanel.SetActive(false);
         buttonBackMengenalAksara.SetActive(false);
     }
@@ -83,6 +88,7 @@ public class MenuBelajar : MonoBehaviour
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);
         menuBelajarButton.SetActive(false);
+        menuBelajarHeading.SetActive (false);
         mengenalAksaraPanel.SetActive(false);
         buttonBackMengenalAksara.SetActive(false);
     }
@@ -93,6 +99,7 @@ public class MenuBelajar : MonoBehaviour
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);
         menuBelajarButton.SetActive(false);
+        menuBelajarHeading.SetActive(false);
         mengenalAksaraPanel.SetActive(false);
         buttonBackMengenalAksara.SetActive(false);
     }
@@ -103,6 +110,7 @@ public class MenuBelajar : MonoBehaviour
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);
         menuBelajarButton.SetActive(false);
+        menuBelajarHeading.SetActive(false);
         mengenalAksaraPanel.SetActive(false);
         buttonBackMengenalAksara.SetActive(false);
     }
