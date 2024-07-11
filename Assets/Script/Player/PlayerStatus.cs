@@ -9,7 +9,6 @@ public class PlayerStatus : MonoBehaviour
     public int currHealth;
     public int damage;
     private bool dead;
-    
 
     private Animator anim;
     private float timerHurt = 1f;
@@ -39,17 +38,15 @@ public class PlayerStatus : MonoBehaviour
     public AudioClip respawnSound;
     public AudioClip ashLava;
 
-    
-
     void Awake()
     {
-        
         currHealth = maxHealth;
         anim = GetComponent<Animator>();
         currTimer = timerHurt;
         rb = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
         spriteRend = GetComponent<SpriteRenderer>();
+        score = PlayerPrefs.GetInt("Score", 0);
     }
 
     void Update()
@@ -77,11 +74,9 @@ public class PlayerStatus : MonoBehaviour
         anim.SetTrigger("dead");
         anim.SetBool("isDead", true);
         playerController.enabled = false;
-        //AudioManager.instance.PlaySound(dieSound);
-        // Mengatur kecepatan Rigidbody2D menjadi nol
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
-        rb.isKinematic = true; // Membuat Rigidbody2D menjadi kinematic agar tidak terpengaruh oleh fisika
+        rb.isKinematic = true;
 
         foreach (Component component in components)
         {
@@ -101,7 +96,6 @@ public class PlayerStatus : MonoBehaviour
         {
             anim.SetTrigger("hurt");
             AudioManager.instance.PlaySound(hurtSound);
-            
             StartCoroutine(Invunerability());
             if (Time.timeScale > 0)
             {
@@ -130,6 +124,7 @@ public class PlayerStatus : MonoBehaviour
     public void Score()
     {
         scoreText.text = "Score: " + score.ToString();
+        PlayerPrefs.SetInt("Score", score);
     }
 
     public void Respawn()
@@ -138,7 +133,7 @@ public class PlayerStatus : MonoBehaviour
         anim.ResetTrigger("dead");
         anim.SetBool("isDead", false);
         playerController.enabled = true;
-        rb.isKinematic = false; // Membuat Rigidbody2D kembali dipengaruhi oleh fisika
+        rb.isKinematic = false;
         dead = false;
         EnableSprite();
         AudioManager.instance.PlaySound(respawnSound);
@@ -176,5 +171,12 @@ public class PlayerStatus : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
+    }
+
+    // Add this method to increase the score
+    public void AddScore(int amount)
+    {
+        score += amount;
+        Score(); // Update the score display
     }
 }

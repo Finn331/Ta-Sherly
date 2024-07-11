@@ -21,7 +21,7 @@ public class QuizSystem : MonoBehaviour
 
     void Start()
     {
-        //initialization code
+        // Initialization code
     }
 
     public void TrueAnswer()
@@ -35,6 +35,12 @@ public class QuizSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         playerController.enabled = true;
         playerController2.enabled = true;
+
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            player.SendMessage("AddScore", 5);
+        }
     }
 
     public void WrongAnswer()
@@ -54,6 +60,5 @@ public class QuizSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         quizPanel.SetActive(false);
-        
     }
 }
