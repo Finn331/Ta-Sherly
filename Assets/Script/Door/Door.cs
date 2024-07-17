@@ -64,6 +64,7 @@ public class Door : MonoBehaviour
         if (collision.tag == "Player")
         {
             interactButton.SetActive(true);
+            LeanTween.scale(interactButton, new Vector3(1, 1, 1), 1f).setEase(LeanTweenType.easeOutBack);
             canTeleport = true;
             anim.SetTrigger("open");
             anim.SetBool("isOpen", true);
@@ -75,6 +76,7 @@ public class Door : MonoBehaviour
         if (collision.tag == "Player")
         {
             interactButton.SetActive(false);
+            LeanTween.scale(interactButton, new Vector3(0, 0, 0), 1f).setEase(LeanTweenType.easeOutBack);
             canTeleport = false;
             anim.SetBool("isOpen", false);
         }
