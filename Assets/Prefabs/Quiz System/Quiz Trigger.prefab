@@ -209,7 +209,7 @@ MonoBehaviour:
   levelsManager: {fileID: 0}
   playerController: {fileID: 0}
   playerController2: {fileID: 0}
-  buttonInteract: {fileID: 0}
+  buttonInteract: {fileID: 4055727883921881272}
 --- !u!61 &9184948301389427984
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance { get; private set; }
 
     //What we want to save
-    public int level1;
+    public int currentLevel;
     //public int coin;
     //public int key;
 
@@ -33,7 +33,7 @@ public class SaveManager : MonoBehaviour
 
             //coin = data.coin;
             //key = data.key;
-            level1 = data.level1;
+            currentLevel = data.currentLevel;
 
             file.Close();
         }
@@ -47,7 +47,7 @@ public class SaveManager : MonoBehaviour
 
         //data.coin = coin;
         //data.key = key;
-        data.level1 = level1;
+        data.currentLevel = currentLevel;
 
         bf.Serialize(file, data);
         file.Close();
@@ -57,7 +57,7 @@ public class SaveManager : MonoBehaviour
 [Serializable]
 class PlayerData_Storage
 {
-    public int level1;
+    public int currentLevel;
     //public int coin;
     //public int key;
 }
