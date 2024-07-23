@@ -66,6 +66,7 @@ public class PlayerStatus : MonoBehaviour
         if (collision.gameObject.CompareTag("Lava"))
         {
             AudioManager.instance.PlaySound(ashLava);
+            currHealth = 0;
         }
     }
 
@@ -124,7 +125,6 @@ public class PlayerStatus : MonoBehaviour
     public void Score()
     {
         scoreText.text = "Score: " + score.ToString();
-        PlayerPrefs.SetInt("Score", score);
     }
 
     public void Respawn()

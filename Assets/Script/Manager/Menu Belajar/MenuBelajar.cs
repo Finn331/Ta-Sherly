@@ -26,6 +26,9 @@ public class MenuBelajar : MonoBehaviour
     [Header("Angka Panel")]
     public GameObject angka;
 
+    [Header("Audio Clip")]
+    [SerializeField] AudioClip buttonClick;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,7 @@ public class MenuBelajar : MonoBehaviour
     // Mengenal Aksara Sunda
     public void MengenalAksaraSunda()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         menuBelajarPanel.SetActive(false);
         menuBelajarButton.SetActive(false);
         menuBelajarHeading.SetActive(false);
@@ -50,6 +54,7 @@ public class MenuBelajar : MonoBehaviour
 
     public void MengenalAksaraSundaBack()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         menuBelajarPanel.SetActive(true);
         menuBelajarButton.SetActive(true);
         menuBelajarHeading.SetActive(true);
@@ -59,6 +64,7 @@ public class MenuBelajar : MonoBehaviour
 
     public void BackButtonToAksaraSundaPanel()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         mengenalAksaraPanel.SetActive(true);
         buttonBackMengenalAksara.SetActive(true);
         menuBelajarPanel.SetActive(false);
@@ -73,6 +79,7 @@ public class MenuBelajar : MonoBehaviour
 
     public void AksaraSwara()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         aksaraSwara.SetActive(true);
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);
@@ -84,6 +91,7 @@ public class MenuBelajar : MonoBehaviour
 
     public void AksaraNgalegena()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         aksaraNgalegena.SetActive(true);
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);
@@ -95,6 +103,7 @@ public class MenuBelajar : MonoBehaviour
 
     public void AksaraAngka()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         angka.SetActive(true);
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);
@@ -106,6 +115,7 @@ public class MenuBelajar : MonoBehaviour
 
     public void Vokalisasi()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         vokalisasi.SetActive(true);
         backButton.SetActive(true);
         menuBelajarPanel.SetActive(false);

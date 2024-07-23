@@ -41,11 +41,20 @@ public class MainmenuManager : MonoBehaviour
     [Header("Slider")]
     [SerializeField] Slider loadingSlider;
 
+    [Header("Audio Clip")]
+    [SerializeField] AudioClip buttonClick;
+    [SerializeField] AudioClip bgmSong;
+
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Level 1", 0);
-        PlayerPrefs.SetInt("Level 2", 0);
+        SaveManager.instance.isFirstTime = false;
+        SaveManager.instance.Save();
+        AudioManager.instance.PlayMusic(bgmSong, true);
+
+        // GA GUNA
+        //PlayerPrefs.SetInt("Level 1", 0);
+        //PlayerPrefs.SetInt("Level 2", 0);
     }
 
     // Update is called once per frame
@@ -70,6 +79,8 @@ public class MainmenuManager : MonoBehaviour
         actionPanel.SetActive(false);
         buttonPanel.SetActive(false);
         backgroundMainmenu.SetActive(false);
+
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void Setting()
@@ -77,16 +88,19 @@ public class MainmenuManager : MonoBehaviour
         settingPanel.SetActive(true);
         settingButton.SetActive(true);
         LeanTween.scale(settingButton, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void QuitGame()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         Application.Quit();
     }
 
     // Button Functions
     public void SettingBack()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         settingPanel.SetActive(false);
         settingButton.SetActive(false);
         settingButton.transform.localScale = Vector3.zero;
@@ -95,6 +109,7 @@ public class MainmenuManager : MonoBehaviour
     // Menu Belajar
     public void MenuBelajar()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         menuBelajarBackground.SetActive(true);
         menuBelajarButton.SetActive(true);
         menuBelajarPanel.SetActive(true);
@@ -108,6 +123,7 @@ public class MainmenuManager : MonoBehaviour
 
     public void MenuBelajarBack()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         menuBelajarButton.SetActive(false);
         menuBelajarBackground.SetActive(false);
         menuBelajarPanel.transform.localScale = Vector3.zero;
@@ -122,6 +138,7 @@ public class MainmenuManager : MonoBehaviour
     // Selection Character
     public void SelectCharacter()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         character1Prefabs.SetActive(true);
         PlayerPrefs.SetInt("Character", 1);
         PlayerPrefs.Save();
@@ -130,6 +147,7 @@ public class MainmenuManager : MonoBehaviour
 
     public void SelectCharacter2()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         character2Prefabs.SetActive(true);
         PlayerPrefs.SetInt("Character", 2);
         PlayerPrefs.Save();
@@ -138,6 +156,7 @@ public class MainmenuManager : MonoBehaviour
     
     public void BackButtonCharacterSelect()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         characterPanel.SetActive(false);
         characterSelectionButtonPanel.SetActive(false);
         backgroundSelection.SetActive(false);
@@ -151,6 +170,7 @@ public class MainmenuManager : MonoBehaviour
     // Select Level
     public void SelectLevel()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         characterPanel.SetActive(false);
         characterSelectionButtonPanel.SetActive(false);
         backgroundSelection.SetActive(false);
@@ -161,6 +181,7 @@ public class MainmenuManager : MonoBehaviour
 
     public void SelectLevelBack()
     {
+        AudioManager.instance.PlaySound(buttonClick);
         characterPanel.SetActive(true);
         characterSelectionButtonPanel.SetActive(true);
         backgroundSelection.SetActive(true);
