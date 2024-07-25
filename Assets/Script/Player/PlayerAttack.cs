@@ -26,30 +26,34 @@ public class PlayerAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsGrounded())
+        bool isGrounded = IsGrounded();
+        anim.SetBool("isGrounded", isGrounded);
+
+        if (isGrounded)
         {
-            anim.SetBool("isGrounded", true);
-
-            //if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown/* && playerMovement.canAttack()*/
-            //    && Time.timeScale > 0)
-            //{
-            //    Attack();
-            //    //anim.SetTrigger("attack");
-                
-            //}
-
-            if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && Time.timeScale > 0 && isMoving)
+            if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && Time.timeScale > 0)
             {
-                MoveAttack();
+                if (isMoving)
+                {
+                    MoveAttack();
+                }
+                else
+                {
+                    Attack();
+                }
             }
-            else if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && Time.timeScale > 0 && !isMoving)
+        }
+        else
+        {
+            if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && Time.timeScale > 0 && /*Input.GetKey(KeyCode.Space)*/!IsGrounded())
             {
-                Attack();
+                JumpAttack();
             }
         }
 
         cooldownTimer += Time.deltaTime;
     }
+
 
     private void Attack()
     {
@@ -79,6 +83,16 @@ public class PlayerAttack : MonoBehaviour
     private void MoveAttack()
     {
         anim.SetTrigger("moveAttack");
+        
+        AudioManager.instance.PlaySound(fireballSound);
+        cooldownTimer = 0;
+
+        fireballs[FindFireball()].transform.position = firePoint.position;
+        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
+    private void JumpAttack()
+    {
+        anim.SetTrigger("jumpAttack");
         
         AudioManager.instance.PlaySound(fireballSound);
         cooldownTimer = 0;

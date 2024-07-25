@@ -1,52 +1,69 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class InitialscreenManager : MonoBehaviour
 {
-    [Header("Video Player")]
+    [Header("Video Player for Initial Screen")]
+    [SerializeField] private VideoPlayer videoPlayerIS;
+    [SerializeField] private GameObject panelVideoIS;
+
+    [Header("Video Player for story")]
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private GameObject skipButton;
+    [SerializeField] private GameObject canvasVideo;
+    [SerializeField] private GameObject panelVideoStory;
 
     [Header("Loading Screen")]
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private GameObject loadingScreen; // Canvas Loading Screen
 
-    // Start is called before the first frame update
     void Start()
     {
         SaveManager.instance.Load();
-        // Tambahkan event handler untuk loopPointReached
+
+        if (videoPlayerIS != null)
+        {
+            videoPlayerIS.loopPointReached += OnInitialVideoEnd;
+            videoPlayerIS.Play();
+        }
+
         if (videoPlayer != null)
         {
             videoPlayer.loopPointReached += OnVideoEnd;
         }
 
         ButtonChecker();
-        //VideoChecker();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 
     public void SkipVideo()
     {
         videoPlayer.Stop();
-        //SceneLoader.Instance.LoadScene("Mainmenu");
+        canvasVideo.SetActive(false);
         LoadingLevelBtn("Mainmenu");
     }
 
     void VideoChecker()
     {
-        // Implementasikan logika yang ingin Anda lakukan ketika video selesai
         Debug.Log("Video telah selesai!");
-        // Contoh: Langsung pindah ke scene Mainmenu
+        canvasVideo.SetActive(false);
         LoadingLevelBtn("Mainmenu");
+    }
+
+    private void OnInitialVideoEnd(VideoPlayer vp)
+    {
+        panelVideoIS.SetActive(false);  // Matikan panel video initial screen
+        videoPlayerIS.gameObject.SetActive(false);  // Matikan video player initial screen
+
+        panelVideoStory.SetActive(true);  // Aktifkan panel video story
+        videoPlayer.gameObject.SetActive(true);  // Aktifkan video player story
+        canvasVideo.SetActive(true);  // Aktifkan canvas video
+        videoPlayer.Play();  // Mainkan video story
     }
 
     private void OnVideoEnd(VideoPlayer vp)
@@ -56,12 +73,11 @@ public class InitialscreenManager : MonoBehaviour
 
     void ButtonChecker()
     {
-        if (SaveManager.instance.isFirstTime == true)
+        if (SaveManager.instance.isFirstTime)
         {
             skipButton.SetActive(false);
         }
-        
-        if (SaveManager.instance.isFirstTime == false)
+        else
         {
             skipButton.SetActive(true);
             //LeanTween.scale(skipButton, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
@@ -70,7 +86,9 @@ public class InitialscreenManager : MonoBehaviour
 
     public void LoadingLevelBtn(string levelToLoad)
     {
+        canvasVideo.SetActive(true);
         loadingScreen.SetActive(true);
+        skipButton.SetActive(false);
         StartCoroutine(LoadLevel(levelToLoad));
     }
 
@@ -82,13 +100,17 @@ public class InitialscreenManager : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             loadingSlider.value = progress;
-
             yield return null;
         }
     }
 
     void OnDestroy()
     {
+        if (videoPlayerIS != null)
+        {
+            videoPlayerIS.loopPointReached -= OnInitialVideoEnd;
+        }
+
         if (videoPlayer != null)
         {
             videoPlayer.loopPointReached -= OnVideoEnd;
