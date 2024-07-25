@@ -3785,6 +3785,8 @@ MonoBehaviour:
   character2Prefabs: {fileID: 1739425241431377803, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
   selectionLevelPanel: {fileID: 866768881}
   selectionLevelButtonPanel: {fileID: 105693951}
+  level2: {fileID: 502784426}
+  level3: {fileID: 1367593321}
   headerMenu: {fileID: 1126129955}
   actionPanel: {fileID: 1090933520}
   buttonPanel: {fileID: 325701263}
@@ -4154,7 +4156,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 502784427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476384060}
+        m_TargetAssemblyTypeName: MainmenuManager, Assembly-CSharp
+        m_MethodName: LoadingLevelBtn
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &502784427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4175,7 +4189,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 845f041940a258b4cbdc52cc32b97081, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a866c6abb65b9e847b8906ce57cc4a34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10491,7 +10505,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367593322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476384060}
+        m_TargetAssemblyTypeName: MainmenuManager, Assembly-CSharp
+        m_MethodName: LoadingLevelBtn
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1367593322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10512,7 +10538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 845f041940a258b4cbdc52cc32b97081, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eeef97c8b57170448be0ecdf8c5b4a4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

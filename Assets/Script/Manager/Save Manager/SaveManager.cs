@@ -8,7 +8,11 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance { get; private set; }
 
     //What we want to save
-    public int currentLevel;
+    [Header("Level Unlocked")]
+    public bool level2Unlocked;
+    public bool level3Unlocked;
+
+    [Header("Initial Screen Setup")]
     public bool isFirstTime = true;
     //public int coin;
     //public int key;
@@ -34,7 +38,8 @@ public class SaveManager : MonoBehaviour
 
             //coin = data.coin;
             //key = data.key;
-            currentLevel = data.currentLevel;
+            level2Unlocked = data.level2Unlocked;
+            level3Unlocked = data.level3Unlocked;
             isFirstTime = data.isFirstTime;
 
             file.Close();
@@ -49,8 +54,9 @@ public class SaveManager : MonoBehaviour
 
         //data.coin = coin;
         //data.key = key;
-        data.currentLevel = currentLevel;
         data.isFirstTime = isFirstTime;
+        data.level2Unlocked = level2Unlocked;
+        data.level3Unlocked = level3Unlocked;
 
         bf.Serialize(file, data);
         file.Close();
@@ -60,7 +66,8 @@ public class SaveManager : MonoBehaviour
 [Serializable]
 class PlayerData_Storage
 {
-    public int currentLevel;
+    public bool level2Unlocked;
+    public bool level3Unlocked;
     public bool isFirstTime;
     //public int coin;
     //public int key;

@@ -22,6 +22,8 @@ public class MainmenuManager : MonoBehaviour
     [Header("Selection Level Setting")]
     public GameObject selectionLevelPanel;
     public GameObject selectionLevelButtonPanel;
+    [SerializeField] Button level2;
+    [SerializeField] Button level3;
 
     [Header("Button Panel & Header Mainmenu")]
     public GameObject headerMenu;
@@ -51,6 +53,8 @@ public class MainmenuManager : MonoBehaviour
         SaveManager.instance.isFirstTime = false;
         SaveManager.instance.Save();
         AudioManager.instance.PlayMusic(bgmSong, true);
+
+        LevelCheck();
 
         // GA GUNA
         //PlayerPrefs.SetInt("Level 1", 0);
@@ -210,6 +214,31 @@ public class MainmenuManager : MonoBehaviour
             loadingSlider.value = progress;
 
             yield return null;
+        }
+    }
+
+    void LevelCheck()
+    {
+        if (SaveManager.instance.level2Unlocked == false)
+        {
+            SaveManager.instance.level2Unlocked = false;
+
+        }
+
+        if (SaveManager.instance.level3Unlocked == false)
+        {
+            SaveManager.instance.level3Unlocked = false;
+
+        }
+
+        if (SaveManager.instance.level2Unlocked == true)
+        {
+            level2.interactable = true;
+        }
+
+        if (SaveManager.instance.level3Unlocked == true)
+        {
+            level3.interactable = true;
         }
     }
 }

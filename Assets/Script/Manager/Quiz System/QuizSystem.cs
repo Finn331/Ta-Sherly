@@ -39,9 +39,14 @@ public class QuizSystem : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            player.SendMessage("AddScore", 5);
+            PlayerStatus playerStatus = player.GetComponent<PlayerStatus>();
+            if (playerStatus != null)
+            {
+                playerStatus.score += 5;
+            }
         }
     }
+
 
     public void WrongAnswer()
     {

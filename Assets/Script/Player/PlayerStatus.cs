@@ -46,7 +46,7 @@ public class PlayerStatus : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerController = GetComponent<PlayerController>();
         spriteRend = GetComponent<SpriteRenderer>();
-        score = PlayerPrefs.GetInt("Score", 0);
+        //score = PlayerPrefs.GetInt("Score", 0);
     }
 
     void Update()
