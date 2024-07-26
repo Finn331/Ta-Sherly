@@ -46,6 +46,11 @@ public class LevelsManager : MonoBehaviour
         isGameover = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     // Start is called before the first frame update

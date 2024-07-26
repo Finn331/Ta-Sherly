@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -147,7 +147,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HURT-3_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 49
+        width: 169
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab22d3dba0f7a864bbfd84b0ba27c106
+      internalID: -1184234900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +179,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HURT-3_0: 1072080791
+      HURT-3_1: -889372531
+      HURT-3_10: 1646804358
+      HURT-3_11: -864919482
+      HURT-3_12: -687612620
+      HURT-3_2: -1184234900
+      HURT-3_3: 1341697102
+      HURT-3_4: -585298797
+      HURT-3_5: -1479872418
+      HURT-3_6: 15955973
+      HURT-3_7: 1096272194
+      HURT-3_8: 1234902812
+      HURT-3_9: 1650005556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,6 +12,11 @@ public class SaveManager : MonoBehaviour
     public bool level2Unlocked;
     public bool level3Unlocked;
 
+    [Header("Level Score")]
+    public int level1Score;
+    public int level2Score;
+    public int level3Score;
+
     [Header("Initial Screen Setup")]
     public bool isFirstTime = true;
     //public int coin;
@@ -38,6 +43,13 @@ public class SaveManager : MonoBehaviour
 
             //coin = data.coin;
             //key = data.key;
+
+            // Score Save
+            level1Score = data.level1Score;
+            level2Score = data.level2Score;
+            level3Score = data.level3Score;
+
+            // Boolean Save
             level2Unlocked = data.level2Unlocked;
             level3Unlocked = data.level3Unlocked;
             isFirstTime = data.isFirstTime;
@@ -54,6 +66,13 @@ public class SaveManager : MonoBehaviour
 
         //data.coin = coin;
         //data.key = key;
+
+        // Score Save
+        data.level1Score = level1Score;
+        data.level2Score = level2Score;
+        data.level3Score = level3Score;
+
+        // Boolean Save
         data.isFirstTime = isFirstTime;
         data.level2Unlocked = level2Unlocked;
         data.level3Unlocked = level3Unlocked;
@@ -66,6 +85,12 @@ public class SaveManager : MonoBehaviour
 [Serializable]
 class PlayerData_Storage
 {
+    // Score Save
+    public int level1Score;
+    public int level2Score;
+    public int level3Score;
+
+    // Boolean Save
     public bool level2Unlocked;
     public bool level3Unlocked;
     public bool isFirstTime;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,6 +25,9 @@ public class MainmenuManager : MonoBehaviour
     public GameObject selectionLevelButtonPanel;
     [SerializeField] Button level2;
     [SerializeField] Button level3;
+    [SerializeField] TextMeshProUGUI level1LastScore;
+    [SerializeField] TextMeshProUGUI level2LastScore;
+    [SerializeField] TextMeshProUGUI level3LastScore;
 
     [Header("Button Panel & Header Mainmenu")]
     public GameObject headerMenu;
@@ -47,6 +51,14 @@ public class MainmenuManager : MonoBehaviour
     [SerializeField] AudioClip buttonClick;
     [SerializeField] AudioClip bgmSong;
 
+    private void Awake()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +67,7 @@ public class MainmenuManager : MonoBehaviour
         AudioManager.instance.PlayMusic(bgmSong, true);
 
         LevelCheck();
-
+        LastScore();
         // GA GUNA
         //PlayerPrefs.SetInt("Level 1", 0);
         //PlayerPrefs.SetInt("Level 2", 0);
@@ -181,6 +193,10 @@ public class MainmenuManager : MonoBehaviour
 
         selectionLevelPanel.SetActive(true);
         selectionLevelButtonPanel.SetActive(true);
+
+        level1LastScore.enabled = true;
+        level2LastScore.enabled = true;
+        level3LastScore.enabled = true;
     }
 
     public void SelectLevelBack()
@@ -192,6 +208,10 @@ public class MainmenuManager : MonoBehaviour
 
         selectionLevelPanel.SetActive(false);
         selectionLevelButtonPanel.SetActive(false);
+
+        level1LastScore.enabled = false;
+        level2LastScore.enabled = false;
+        level3LastScore.enabled = false;
     }
 
     // Async Loader
@@ -240,5 +260,13 @@ public class MainmenuManager : MonoBehaviour
         {
             level3.interactable = true;
         }
+    }
+
+    void LastScore()
+    {
+
+       level1LastScore.text = "Last Score: " + SaveManager.instance.level1Score.ToString();
+        level2LastScore.text = "Last Score: " + SaveManager.instance.level2Score.ToString();
+        level3LastScore.text = "Last Score: " + SaveManager.instance.level3Score.ToString();
     }
 }

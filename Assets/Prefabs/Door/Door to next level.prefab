@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3386880569789581564}
   - component: {fileID: 4198857594323033157}
   - component: {fileID: 7482554643021104931}
+  - component: {fileID: 813175090952279155}
   - component: {fileID: 2727307389559559700}
   m_Layer: 0
   m_Name: Door to next level
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c29ca93bf7be6284dac3d6f2e117dd49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cce935dafb3229e42a25524abb0a744c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,22 +117,43 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.24, y: 3.64}
+    oldSize: {x: 3.38, y: 3.47}
     newSize: {x: 3.24, y: 3.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.24, y: 3.64}
+  m_Size: {x: 3.38, y: 3.47}
   m_EdgeRadius: 0
+--- !u!95 &813175090952279155
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226141620400348428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6dd0ecd3c8055a46b6a5daa070a5d71, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2727307389559559700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreRequirement: 50
   nextLevelName: Level 2
+  levelAdd: 0
   interactButton: {fileID: 3317699995179109484}
   loadingCanvas: {fileID: 0}
   loadingSlider: {fileID: 0}

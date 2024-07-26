@@ -8,7 +8,7 @@ public class Checkpoint : MonoBehaviour
     private Transform currentCheckpoint;
     private PlayerStatus playerStatus;
     private Animator anim;
-    private int checkpointCounter = 0; // Menambahkan integer untuk melacak checkpoint
+    private int checkpointCounter = 0; // Tracks the number of checkpoints triggered
 
     [Header("Script Reference")]
     public LevelsManager levelsManager;
@@ -20,11 +20,10 @@ public class Checkpoint : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        // Memastikan playerStatus ditemukan pada GameObject yang benar
         playerStatus = FindObjectOfType<PlayerStatus>();
         if (playerStatus == null)
         {
-            Debug.LogError("PlayerStatus tidak ditemukan dalam scene!");
+            Debug.LogError("PlayerStatus not found in the scene!");
         }
     }
 
@@ -32,24 +31,24 @@ public class Checkpoint : MonoBehaviour
     {
         if (currentCheckpoint == null)
         {
-            Debug.LogWarning("currentCheckpoint masih null, memanggil Die pada playerStatus");
+            Debug.LogWarning("currentCheckpoint is null, calling Die on playerStatus");
             playerStatus.Die();
             levelsManager.GameOver();
             playerStatus.DisableSprite();
-            return; // Menghentikan eksekusi untuk mencegah kesalahan lebih lanjut
+            return; // Stop execution to prevent further errors
         }
 
         playerStatus.Respawn();
         transform.position = currentCheckpoint.position;
 
-        // Pengecekan nilai checkpoint
-        if (checkpointCounter > 1)
+        // Camera logic based on checkpointCounter
+        if (checkpointCounter > 1) // Camera B activates after second checkpoint
         {
             ActivateCameraB();
         }
-        else
+        else if (checkpointCounter < 2)
         {
-            MoveCamera();
+            ActivateCameraA();
         }
     }
 
@@ -58,14 +57,14 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
             currentCheckpoint = collision.transform;
-            checkpointCounter++; // Meningkatkan nilai checkpointCounter setiap kali checkpoint disentuh
-            //SoundManager.instance.PlaySound(checkpoint);
+            checkpointCounter++; // Increase checkpointCounter when a checkpoint is triggered
+            // SoundManager.instance.PlaySound(checkpoint);
             collision.GetComponent<Collider2D>().enabled = false;
             collision.GetComponent<Animator>().SetTrigger("triggered");
         }
     }
 
-    private void MoveCamera()
+    private void ActivateCameraA()
     {
         cameraB.SetActive(false);
         cameraA.SetActive(true);
@@ -76,10 +75,4 @@ public class Checkpoint : MonoBehaviour
         cameraA.SetActive(false);
         cameraB.SetActive(true);
     }
-
-    //IEnumerator AnimationCheck()
-    //{
-    //    yield return new WaitForSeconds(1);
-    //    levelsManager.GameOver();
-    //}
 }

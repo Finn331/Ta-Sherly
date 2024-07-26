@@ -6,7 +6,7 @@ public class MeleeEnemyAstar : MonoBehaviour
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private int damage;
+    public int damage;
 
     [Header("Collider Parameters")]
     [SerializeField] private float colliderDistance;
