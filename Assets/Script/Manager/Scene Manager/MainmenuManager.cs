@@ -40,6 +40,11 @@ public class MainmenuManager : MonoBehaviour
     public GameObject menuBelajarPanel;
     public GameObject menuBelajarButton;
 
+    [Header("Info Holder")]
+    [SerializeField] GameObject infoHolder;
+    [SerializeField] GameObject infoCloseButton;
+    [SerializeField] GameObject infoPanel;
+
     [Header("Loading Screen")]
     [SerializeField] GameObject loadingScreen;
     [SerializeField] GameObject menuCanvas;
@@ -97,6 +102,25 @@ public class MainmenuManager : MonoBehaviour
         backgroundMainmenu.SetActive(false);
 
         AudioManager.instance.PlaySound(buttonClick);
+    }
+
+    public void InfoPanel()
+    {
+
+        infoHolder.SetActive(true);
+        infoCloseButton.SetActive(true);
+        infoPanel.SetActive(true);
+        LeanTween.scale(infoHolder, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+        AudioManager.instance.PlaySound(buttonClick);
+    }
+
+    public void CloseInfoPanel()
+    {
+
+        AudioManager.instance.PlaySound(buttonClick);
+        infoCloseButton.SetActive(false);
+        infoPanel.SetActive(false);
+        LeanTween.scale(infoHolder, new Vector3(0, 0, 0), 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() => infoHolder.SetActive(false));
     }
 
     public void Setting()

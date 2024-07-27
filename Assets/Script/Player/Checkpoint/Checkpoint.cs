@@ -19,6 +19,7 @@ public class Checkpoint : MonoBehaviour
 
     private void Awake()
     {
+        checkpointCounter = 0;
         anim = GetComponent<Animator>();
         playerStatus = FindObjectOfType<PlayerStatus>();
         if (playerStatus == null)
@@ -46,7 +47,7 @@ public class Checkpoint : MonoBehaviour
         {
             ActivateCameraB();
         }
-        else if (checkpointCounter < 2)
+        else if (checkpointCounter == 1)
         {
             ActivateCameraA();
         }

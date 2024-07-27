@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using System.Threading;
 
 public class CameraShake : MonoBehaviour
 {
@@ -10,25 +8,24 @@ public class CameraShake : MonoBehaviour
     private CinemachineBasicMultiChannelPerlin _cbmcp;
 
     [Header("Camera Shake Setting")]
-    public float shakeIntensity;
-    public float shakeTime;
-    public float timer;
+    public float shakeIntensity = 1.0f;
+    public float shakeTime = 0.5f;
+    private float timer = 0f;
 
     private void Awake()
     {
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        _cbmcp = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         StopShake();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (timer > 0)
+        if (Time.timeScale > 0 && timer > 0)
         {
             timer -= Time.deltaTime;
 
@@ -39,19 +36,25 @@ public class CameraShake : MonoBehaviour
         }
     }
 
-    public void ShakeCamera()
+    public void ShakeCamera(float intensity = -1f, float time = -1f)
     {
-        _cbmcp = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        _cbmcp.m_AmplitudeGain = shakeIntensity;
+        if (intensity >= 0)
+        {
+            shakeIntensity = intensity;
+        }
 
+        if (time >= 0)
+        {
+            shakeTime = time;
+        }
+
+        _cbmcp.m_AmplitudeGain = shakeIntensity;
         timer = shakeTime;
     }
 
     public void StopShake()
     {
-        _cbmcp = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         _cbmcp.m_AmplitudeGain = 0;
-
         timer = 0;
     }
 }

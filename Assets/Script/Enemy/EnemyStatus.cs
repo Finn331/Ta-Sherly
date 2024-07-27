@@ -18,10 +18,7 @@ public class EnemyStatus : MonoBehaviour
         currHealth = maxHealth;
     }
 
-    private void Update()
-    {
-        // No need to call Die here.
-    }
+    // Seril Nub
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,6 +38,8 @@ public class EnemyStatus : MonoBehaviour
         if (currHealth <= 0 && !isDead)
         {
             StartCoroutine(Die());
+            anim.SetTrigger("dead");
+            anim.SetBool("isDead", true);
         }
     }
 
@@ -49,7 +48,7 @@ public class EnemyStatus : MonoBehaviour
         isDead = true;
         anim.SetTrigger("dead");
         anim.SetBool("isDead", true);
-
+        anim.SetBool("run", false);
         foreach (Component component in components)
         {
             // Check if the component is a Behaviour (has the enabled property)

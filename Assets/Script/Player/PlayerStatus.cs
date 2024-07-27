@@ -74,6 +74,10 @@ public class PlayerStatus : MonoBehaviour
     {
         anim.SetTrigger("dead");
         anim.SetBool("isDead", true);
+        anim.SetBool("isMoving", false);
+        anim.SetBool("isGrounded", false);
+        anim.SetBool("isAttack", false);
+
         playerController.enabled = false;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
@@ -96,6 +100,31 @@ public class PlayerStatus : MonoBehaviour
         if (currHealth > 0)
         {
             anim.SetTrigger("hurt");
+            AudioManager.instance.PlaySound(hurtSound);
+            StartCoroutine(Invunerability());
+            if (Time.timeScale > 0)
+            {
+                cameraShake.ShakeCamera();
+            }
+        }
+        else
+        {
+            if (!dead)
+            {
+                Die();
+                dead = true;
+            }
+        }
+    }
+
+    public void TakeDamage2(float _damage)
+    {
+        if (invulnerable) return;
+        currHealth = (int)Mathf.Clamp(currHealth - _damage, 0, maxHealth);
+
+        if (currHealth > 0)
+        {
+            anim.SetTrigger("hurt2");
             AudioManager.instance.PlaySound(hurtSound);
             StartCoroutine(Invunerability());
             if (Time.timeScale > 0)

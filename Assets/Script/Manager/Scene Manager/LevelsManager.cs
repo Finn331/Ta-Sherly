@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEditor.Build.Content;
 
 public class LevelsManager : MonoBehaviour
 {
+    [Header("Cara Bermain Setting")]
+    [SerializeField] GameObject caraBermainPanel;
+
     [Header("Pause Parameter")]
     public GameObject pausePanel;
 
@@ -21,6 +25,12 @@ public class LevelsManager : MonoBehaviour
     public GameObject[] players;
     // GameObject to store the initial position
     public GameObject initialPosition;
+
+    [Header("Player Script Reference")]
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerController playerController2;
+    [SerializeField] private PlayerAttack playerAttack;
+    [SerializeField] private PlayerAttack playerAttack2;
 
     [Header("Audio Source Setting")]
     public AudioSource lavaAudioSource;
@@ -44,8 +54,11 @@ public class LevelsManager : MonoBehaviour
         }
         isPaused = false;
         isGameover = false;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         if (Time.timeScale == 0)
         {
@@ -71,7 +84,14 @@ public class LevelsManager : MonoBehaviour
         //InputCheck();
     }
 
-    
+    public void CloseCaraBermain()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        LeanTween.scale(caraBermainPanel, Vector3.zero, 0.5f).setEase(LeanTweenType.easeInOutBack).setOnComplete(() => caraBermainPanel.SetActive(false));
+        StartCoroutine(DelayActivate());
+    }
 
     public void PauseGame()
     {
@@ -108,6 +128,11 @@ public class LevelsManager : MonoBehaviour
     {
         Time.timeScale = 1;
         gameoverPanel.SetActive(false);
+        caraBermainPanel.SetActive(false);
+        playerController.enabled = true;
+        playerController2.enabled = true;
+        playerAttack.enabled = true;
+        playerAttack2.enabled = true;
 
         // Check if Player 1 or Player 2 is active and reset its position if so
         foreach (GameObject player in players)
@@ -163,5 +188,14 @@ public class LevelsManager : MonoBehaviour
         player2Animator.SetBool("isDead", false);
         player1Animator.SetTrigger("idle");
         player2Animator.SetTrigger("idle");
+    }
+
+    public IEnumerator DelayActivate()
+    {
+        yield return new WaitForSeconds(0.5f);
+        playerController.enabled = true;
+        playerController2.enabled = true;
+        playerAttack.enabled = true;
+        playerAttack2.enabled = true;
     }
 }

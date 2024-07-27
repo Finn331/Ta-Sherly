@@ -10,8 +10,12 @@ public class BossMelee : MonoBehaviour
 
     [Header("Melee Attack 2 Parameters")]
     [SerializeField] private float meleeAttack2Chance = 0.45f; // 45% chance for melee attack 2
-    public int meleeAttack2Damage = 3; // Additional damage for MeleeAttack2
+    public int meleeAttack2Damage; // Additional damage for MeleeAttack2
     public bool canUseMeleeAttack2; // Boolean to check if MeleeAttack2 can be used
+
+    [Header("Target Animators")]
+    [SerializeField] private Animator[] targetAnimators; // Array of target Animators
+    [SerializeField] private string targetAnimTrigger; // The trigger name to activate on the target Animators
 
     [Header("Collider Parameters")]
     [SerializeField] private float colliderDistance;
@@ -85,29 +89,44 @@ public class BossMelee : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    private void MeleeAttack2()
-    {
-        anim.SetTrigger("attack2");
-        // Ensure DamagePlayer is called regardless of animation event
-        DamagePlayer(meleeAttack2Damage); // Apply additional damage
-    }
-
-    private void MeleeAttack()
-    {
-        anim.SetTrigger("attack");
-        // Ensure DamagePlayer is called regardless of animation event
-        DamagePlayer();
-    }
-
     private void DamagePlayer(int additionalDamage = 0)
     {
-        if (PlayerInSight() && playerHealth != null) // Ensure playerHealth is not null
+        if (PlayerInSight())
         {
             playerHealth.TakeDamage(damage + additionalDamage);
             AudioManager.instance.PlaySound(attackSound);
         }
     }
 
+    private void DamagePlayer2(int additionalDamage = 0)
+    {
+        if (PlayerInSight())
+        {
+            playerHealth.TakeDamage2(damage + additionalDamage);
+            AudioManager.instance.PlaySound(attackSound);
+        }
+    }
+
+    private void MeleeAttack2()
+    {
+        anim.SetTrigger("attack2");
+        DamagePlayer2(meleeAttack2Damage); // Apply additional damage
+
+        // Trigger the animation on the target Animators
+        //foreach (Animator targetAnimator in targetAnimators)
+        //{
+        //    if (targetAnimator != null)
+        //    {
+        //        targetAnimator.SetTrigger(targetAnimTrigger);
+        //    }
+        //}
+    }
+
+    private void MeleeAttack()
+    {
+        anim.SetTrigger("attack");
+        DamagePlayer();
+    }
 
     void DisablePath()
     {

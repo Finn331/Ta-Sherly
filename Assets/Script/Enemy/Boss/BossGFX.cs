@@ -46,7 +46,7 @@ public class BossGFX : MonoBehaviour
     {
         if (enemyStatus.currHealth == 10)
         {
-            bossMelee.damage = 2;
+            bossMelee.damage = 1;
             aiPath.maxSpeed = 3;
             bossMelee.canUseMeleeAttack2 = true;
         }
