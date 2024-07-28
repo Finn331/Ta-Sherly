@@ -35,6 +35,10 @@ public class LevelsManager : MonoBehaviour
     [Header("Audio Source Setting")]
     public AudioSource lavaAudioSource;
 
+    [Header("Cinemachine Camera Setup")]
+    [SerializeField] GameObject cinemachineCameraP1;
+    [SerializeField] GameObject cinemachineCameraP2;
+
     //[Header("Score Level Setting")]
     //public TextMeshProUGUI scoreText;
 
@@ -47,10 +51,18 @@ public class LevelsManager : MonoBehaviour
         if (character1 != 2)
         {
             players[0].SetActive(true);
+            if (cinemachineCameraP1 != null)
+            {
+                cinemachineCameraP1.SetActive(true);
+            }
         }
         if (character2 != 1)
         {
             players[1].SetActive(true);
+            if (cinemachineCameraP2 != null)
+            {
+                cinemachineCameraP2.SetActive(true);
+            }
         }
         isPaused = false;
         isGameover = false;
@@ -73,7 +85,7 @@ public class LevelsManager : MonoBehaviour
         //players = new GameObject[2];
         //players[0] = GameObject.FindWithTag("Player1");
         //players[1] = GameObject.FindWithTag("Player2");
-
+        CaraBermainChecking();
         //// Find the initial position GameObject
         //initialPosition = GameObject.Find("Initial Position");
     }
@@ -197,5 +209,17 @@ public class LevelsManager : MonoBehaviour
         playerController2.enabled = true;
         playerAttack.enabled = true;
         playerAttack2.enabled = true;
+    }
+
+    void CaraBermainChecking()
+    {
+        if (caraBermainPanel != null && SaveManager.instance.level1Score >= 0)
+        {
+            caraBermainPanel.SetActive(false);
+            playerController.enabled = true;
+            playerController2.enabled = true;
+            playerAttack.enabled = true;
+            playerAttack2.enabled = true;
+        }
     }
 }
