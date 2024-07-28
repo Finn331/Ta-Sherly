@@ -57,6 +57,15 @@ public class Door : MonoBehaviour
         //}
         cameraObject.SetActive(false);
         cameraObject2.SetActive(true);
+        if (cameraObject == null)
+        {
+            Debug.LogWarning("Camera object not assigned!");
+        }
+
+        if (cameraObject2 == null)
+        {
+            Debug.LogWarning("Camera object not assigned!");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -220,6 +220,19 @@ public class LevelsManager : MonoBehaviour
             playerController2.enabled = true;
             playerAttack.enabled = true;
             playerAttack2.enabled = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if (caraBermainPanel == null)
+        {
+            Debug.LogWarning("Cara Bermain Panel is not assigned!");
+            playerController.enabled = true;
+            playerController2.enabled = true;
+            playerAttack.enabled = true;
+            playerAttack2.enabled = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }
