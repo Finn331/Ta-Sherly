@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class SaveManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class SaveManager : MonoBehaviour
     public int level1Score;
     public int level2Score;
     public int level3Score;
+
+    [Header("Menu Belajar Unlocked")]
+    public bool menuGambarUnlocked;
 
     [Header("Initial Screen Setup")]
     public bool isFirstTime = true;
@@ -53,6 +57,7 @@ public class SaveManager : MonoBehaviour
             level2Unlocked = data.level2Unlocked;
             level3Unlocked = data.level3Unlocked;
             isFirstTime = data.isFirstTime;
+            menuGambarUnlocked = data.menuGambarUnlocked;
 
             file.Close();
         }
@@ -76,6 +81,7 @@ public class SaveManager : MonoBehaviour
         data.isFirstTime = isFirstTime;
         data.level2Unlocked = level2Unlocked;
         data.level3Unlocked = level3Unlocked;
+        data.menuGambarUnlocked = menuGambarUnlocked;
 
         bf.Serialize(file, data);
         file.Close();
@@ -94,6 +100,8 @@ class PlayerData_Storage
     public bool level2Unlocked;
     public bool level3Unlocked;
     public bool isFirstTime;
+    public bool menuGambarUnlocked;
+
     //public int coin;
     //public int key;
 }

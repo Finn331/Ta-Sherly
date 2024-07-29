@@ -14,6 +14,10 @@ public class FinishLevel : MonoBehaviour
     [SerializeField] GameObject finishLevelPanel;
     [SerializeField] GameObject finishLevelHolder;
 
+    [Header("Player Reference")]
+    [SerializeField] GameObject player1;
+    [SerializeField] GameObject player2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +41,20 @@ public class FinishLevel : MonoBehaviour
         finishLevelHolder.SetActive(true);
         LeanTween.scale(finishLevelHolder, new Vector3(1, 1, 1), 1f).setEase(LeanTweenType.easeOutBack);
 
+        if (player1 != null)
+        {
+            player1.SetActive(false);
+        }
+
+        if (player2 != null)
+        {
+            player2.SetActive(false);
+        }
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        SaveManager.instance.menuGambarUnlocked = true;
+        SaveManager.instance.Save();
     }
 }

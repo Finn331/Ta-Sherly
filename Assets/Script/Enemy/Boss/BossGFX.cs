@@ -11,6 +11,7 @@ public class BossGFX : MonoBehaviour
     [SerializeField] BossMelee bossMelee; // meleeEnemyAstar reference
 
     public GameObject barrier2;
+    public GameObject barrier1;
     public AIPath aiPath;
     private Animator anim;
 
@@ -42,6 +43,7 @@ public class BossGFX : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(barrier2);
+            Destroy(barrier1);
         }
     }
 

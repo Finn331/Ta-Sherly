@@ -9,7 +9,7 @@ public class BarrierBoss1 : MonoBehaviour
     [SerializeField] GameObject barrier2;
 
     [Header("Script Reference")]
-    [SerializeField] AIDestinationSetter destinationSetter;
+    [SerializeField] GameObject boss;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +27,8 @@ public class BarrierBoss1 : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (barrier2 != null)
-            {
-                barrier2.SetActive(false);
-                destinationSetter.enabled = false;
-            }
+            barrier2.SetActive(false);
+            boss.SetActive(false);
         }
     }
 }

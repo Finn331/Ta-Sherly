@@ -3799,6 +3799,8 @@ MonoBehaviour:
   menuBelajarBackground: {fileID: 1495806600}
   menuBelajarPanel: {fileID: 1826413443}
   menuBelajarButton: {fileID: 1453896308}
+  menuMenulisButton: {fileID: 1743022082}
+  comingSoonHolder: {fileID: 0}
   infoHolder: {fileID: 1079660142}
   infoCloseButton: {fileID: 1495582942}
   infoPanel: {fileID: 1453060855}
@@ -10695,7 +10697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320, y: -580.0702}
+  m_AnchoredPosition: {x: 320, y: -580.27905}
   m_SizeDelta: {x: 609, y: 653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336057527
@@ -15182,7 +15184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -580.0702}
+  m_AnchoredPosition: {x: 960, y: -580.27905}
   m_SizeDelta: {x: 609, y: 653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1898467551
@@ -16549,7 +16551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1600, y: -580.0702}
+  m_AnchoredPosition: {x: 1600, y: -580.27905}
   m_SizeDelta: {x: 609, y: 653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143332872

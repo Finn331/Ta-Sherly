@@ -6,7 +6,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [Header("Text Setting")]
-    [SerializeField] TextMeshProUGUI keyText;
+    [SerializeField] GameObject keyText;
 
     [Header("Script Reference")]
     [SerializeField] Pegas pegas;
@@ -36,12 +36,12 @@ public class Key : MonoBehaviour
                 if (keyText != null)
                 {
 
-                    keyText.enabled = true;
-                    LeanTween.scale(keyText.gameObject, new Vector3(1, 1, 1), 1f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
+                    keyText.SetActive(true);
+                    LeanTween.scale(keyText, new Vector3(1, 1, 1), 1f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
                     {
-                        LeanTween.scale(keyText.gameObject, new Vector3(0, 0, 0), 1.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
+                        LeanTween.scale(keyText, new Vector3(0, 0, 0), 1.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
                         {
-                            keyText.enabled = false;
+                            keyText.SetActive(false);
                         });
 
                     });

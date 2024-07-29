@@ -9,7 +9,7 @@ public class Pegas : MonoBehaviour
     public bool haveKey;
 
     [Header("Pegas Text")]
-    [SerializeField] private TextMeshProUGUI pegasText;
+    [SerializeField] private GameObject pegasText;
 
     [Header("Pegas Button")]
     [SerializeField] private GameObject pegasButton;
@@ -48,6 +48,10 @@ public class Pegas : MonoBehaviour
                 penjaraAnim.SetTrigger("openPenjara");
                 playerController.speed = 0;
                 playerController2.speed = 0;
+                playerController.enabled = false;
+                playerController2.enabled = false;
+
+                
             }
             else
             {
@@ -58,14 +62,14 @@ public class Pegas : MonoBehaviour
 
     private void ShowPegasText()
     {
-        pegasText.enabled = true;
-        LeanTween.scale(pegasText.gameObject, Vector3.one, 1f)
+        pegasText.SetActive(true);
+        LeanTween.scale(pegasText, Vector3.one, 1f)
                  .setEase(LeanTweenType.easeOutBack)
                  .setOnComplete(() =>
                  {
-                     LeanTween.scale(pegasText.gameObject, Vector3.zero, 1.5f)
+                     LeanTween.scale(pegasText, Vector3.zero, 1.5f)
                               .setEase(LeanTweenType.easeOutBack)
-                              .setOnComplete(() => pegasText.enabled = false);
+                              .setOnComplete(() => pegasText.SetActive(false));
                  });
     }
 

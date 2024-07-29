@@ -39,7 +39,8 @@ public class MainmenuManager : MonoBehaviour
     public GameObject menuBelajarBackground;
     public GameObject menuBelajarPanel;
     public GameObject menuBelajarButton;
-
+    [SerializeField] Button menuMenulisButton;
+    [SerializeField] GameObject comingSoonHolder;
     [Header("Info Holder")]
     [SerializeField] GameObject infoHolder;
     [SerializeField] GameObject infoCloseButton;
@@ -71,6 +72,7 @@ public class MainmenuManager : MonoBehaviour
         SaveManager.instance.Save();
         AudioManager.instance.PlayMusic(bgmSong, true);
 
+        MenuMenulisCheck();
         LevelCheck();
         LastScore();
         // GA GUNA
@@ -168,6 +170,8 @@ public class MainmenuManager : MonoBehaviour
         menuBelajarBackground.SetActive(false);
         menuBelajarPanel.transform.localScale = Vector3.zero;
         menuBelajarPanel.SetActive(false);
+        comingSoonHolder.SetActive(false);
+        comingSoonHolder.transform.localScale = Vector3.zero;
 
         headerMenu.SetActive(true);
         actionPanel.SetActive(true);
@@ -292,5 +296,25 @@ public class MainmenuManager : MonoBehaviour
        level1LastScore.text = "Last Score: " + SaveManager.instance.level1Score.ToString();
         level2LastScore.text = "Last Score: " + SaveManager.instance.level2Score.ToString();
         level3LastScore.text = "Last Score: " + SaveManager.instance.level3Score.ToString();
+    }
+
+    void MenuMenulisCheck()
+    {
+        if (SaveManager.instance.menuGambarUnlocked == true)
+        {
+            menuMenulisButton.interactable = true;
+        }
+    }
+
+    public void MenuMenulis()
+    {
+       AudioManager.instance.PlaySound(buttonClick);
+       LeanTween.scale(comingSoonHolder, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+    }
+
+    public void MenuMenulisBack()
+    {
+       AudioManager.instance.PlaySound(buttonClick);
+       LeanTween.scale(comingSoonHolder, new Vector3(0, 0, 0), 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() => comingSoonHolder.SetActive(false));
     }
 }
