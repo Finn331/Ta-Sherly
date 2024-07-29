@@ -1,6 +1,7 @@
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class BossGFX : MonoBehaviour
@@ -9,6 +10,7 @@ public class BossGFX : MonoBehaviour
     [SerializeField] EnemyStatus enemyStatus; // enemyStatus reference
     [SerializeField] BossMelee bossMelee; // meleeEnemyAstar reference
 
+    public GameObject barrier2;
     public AIPath aiPath;
     private Animator anim;
 
@@ -35,11 +37,18 @@ public class BossGFX : MonoBehaviour
         anim.SetBool("run", isMoving);
 
         PhaseChange();
+
+        if (enemyStatus.currHealth < 1)
+        {
+            Destroy(gameObject);
+            Destroy(barrier2);
+        }
     }
 
     void DeactivateEnemy()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
+
     }
 
     void PhaseChange()

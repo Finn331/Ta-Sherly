@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Script Reference")]
     public LevelsManager levelsManager;
+    [SerializeField] LevelManager2 levelManager2;
+    [SerializeField] LevelManager3 levelManager3;
     private PlayerAttack playerAttack;
 
     [Header("Audio Clip")]
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
     }
     public void InputCheck()
     {
+        if (levelsManager != null) { 
         if (Input.GetButtonDown("Cancel"))
         {
             if (levelsManager.isPaused == false && levelsManager.isGameover == false)
@@ -102,6 +105,37 @@ public class PlayerController : MonoBehaviour
             else if (levelsManager.isPaused)
             {
                 levelsManager.ResumeGame();
+            }
+        }
+       }
+
+        if (levelManager2 != null)
+        {
+            if (Input.GetButtonDown("Cancel"))
+            {
+                if (levelManager2.isPaused == false && levelManager2.isGameover == false)
+                {
+                    levelManager2.PauseGame();
+                }
+                else if (levelManager2.isPaused)
+                {
+                    levelManager2.ResumeGame();
+                }
+            }
+        }
+
+        if (levelManager3 != null)
+        {
+            if (Input.GetButtonDown("Cancel"))
+            {
+                if (levelManager3.isPaused == false && levelManager3.isGameover == false)
+                {
+                    levelManager3.PauseGame();
+                }
+                else if (levelManager3.isPaused)
+                {
+                    levelManager3.ResumeGame();
+                }
             }
         }
     }

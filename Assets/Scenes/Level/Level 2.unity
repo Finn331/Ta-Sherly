@@ -5363,6 +5363,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3386880569789581564, guid: e1289991d05df9a4d9c146878b1e19bd, type: 3}
   m_PrefabInstance: {fileID: 422690042}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &422690044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2727307389559559700, guid: e1289991d05df9a4d9c146878b1e19bd, type: 3}
+  m_PrefabInstance: {fileID: 422690042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769d4a2e322b23d4f8052aadf8fcab0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &438987028
 GameObject:
   m_ObjectHideFlags: 0
@@ -13557,6 +13568,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 298493669691938150, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 298493669691938150, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -15763,6 +15778,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 797531271033758769, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 797531271033758769, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -17002,7 +17021,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 422690044}
         m_TargetAssemblyTypeName: NextLevel, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -18603,7 +18622,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 422690044}
         m_TargetAssemblyTypeName: NextLevel, Assembly-CSharp
         m_MethodName: NextLevelBtn
         m_Mode: 1
@@ -23709,7 +23728,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 422690044}
         m_TargetAssemblyTypeName: NextLevel, Assembly-CSharp
         m_MethodName: MainMenuBtn
         m_Mode: 1

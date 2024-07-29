@@ -17,6 +17,10 @@ public class EnemyStatus : MonoBehaviour
     {
         currHealth = maxHealth;
     }
+    private void Start()
+    {
+        currHealth = maxHealth;
+    }
 
     // Seril Nub
 
