@@ -62,11 +62,11 @@ public class LevelManager2 : MonoBehaviour
         }
         isPaused = false;
         isGameover = false;
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
 
         if (Time.timeScale == 0)
         {

@@ -65,8 +65,8 @@ public class LevelManager3 : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        //Cursor.visible = true;
-        //Cursor.lockState = CursorLockMode.None;
+        ////Cursor.visible = true;
+        ////Cursor.lockState = CursorLockMode.None;
 
         if (Time.timeScale == 0)
         {
