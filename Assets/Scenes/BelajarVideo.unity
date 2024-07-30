@@ -2025,7 +2025,7 @@ MonoBehaviour:
   nextButton: {fileID: 0}
   prevButton: {fileID: 0}
   videoClips:
-  - {fileID: 32900000, guid: a8a385d03e811f14fb78effdef4ea2b1, type: 3}
+  - {fileID: 32900000, guid: d2406333d0a2b684495c88e7d2b6d165, type: 3}
   pauseButtonImage: {fileID: 1808026720}
   unpauseButtonImage: {fileID: 1562658166}
 --- !u!1 &1113225327
@@ -2340,7 +2340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!328 &1402784630
 VideoPlayer:
   m_ObjectHideFlags: 0

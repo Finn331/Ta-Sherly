@@ -19,6 +19,10 @@ public class QuizSystem : MonoBehaviour
     public PlayerController playerController;
     public PlayerController playerController2;
 
+    [Header("Audio Clip")]
+    [SerializeField] AudioClip kamuBenarClip;
+    [SerializeField] AudioClip kamuSalahClip;
+
     void Start()
     {
         // Initialization code
@@ -43,6 +47,7 @@ public class QuizSystem : MonoBehaviour
             if (playerStatus != null)
             {
                 playerStatus.score += 5;
+                AudioManager.instance.PlaySound(kamuBenarClip);
             }
         }
     }
@@ -59,6 +64,7 @@ public class QuizSystem : MonoBehaviour
         playerController.enabled = true;
         playerController2.enabled = true;
         GameObject.Destroy(quizTrigger);
+        AudioManager.instance.PlaySound(kamuSalahClip);
     }
 
     private IEnumerator DeactivateQuizPanelWithDelay()

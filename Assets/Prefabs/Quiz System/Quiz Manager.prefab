@@ -46,8 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizPanel: {fileID: 0}
   quizTrigger: {fileID: 0}
-  rightAnswer: {fileID: 0}
-  falseAnswer: {fileID: 0}
+  kamuBenarImage: {fileID: 0}
+  kamuSalahImage: {fileID: 0}
   textDuration: 1
+  easingType: 0
   levelsManager: {fileID: 0}
   playerController: {fileID: 0}
+  playerController2: {fileID: 0}
+  kamuBenarClip: {fileID: 8300000, guid: 6b589c7d752a7314d95969aac41cf07d, type: 3}
+  kamuSalahClip: {fileID: 8300000, guid: ddfa0b88414be1246afae264a54ad082, type: 3}
