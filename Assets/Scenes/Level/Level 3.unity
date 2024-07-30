@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3865974079657877491, guid: 483508485c0f115488e42ad2f5d9edac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.86
+      value: -24.67
       objectReference: {fileID: 0}
     - target: {fileID: 3865974079657877491, guid: 483508485c0f115488e42ad2f5d9edac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -251,7 +251,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13845857}
-  - component: {fileID: 13845856}
   - component: {fileID: 13845858}
   - component: {fileID: 13845859}
   m_Layer: 0
@@ -261,34 +260,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &13845856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13845855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80c5cfdb8f462654ea79ce3a6d9f39a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caraBermainPanel: {fileID: 0}
-  pausePanel: {fileID: 1266218492}
-  gameoverPanel: {fileID: 1204679012}
-  isPaused: 0
-  isGameover: 0
-  players:
-  - {fileID: 1306313716}
-  - {fileID: 1127687328}
-  initialPosition: {fileID: 862420659}
-  playerController: {fileID: 0}
-  playerController2: {fileID: 0}
-  playerAttack: {fileID: 0}
-  playerAttack2: {fileID: 0}
-  lavaAudioSource: {fileID: 463773107}
-  cinemachineCameraP1: {fileID: 0}
-  cinemachineCameraP2: {fileID: 0}
 --- !u!4 &13845857
 Transform:
   m_ObjectHideFlags: 0
@@ -870,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -1006,9 +977,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1467361572}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -1024,6 +999,10 @@ PrefabInstance:
     - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: m_Name
       value: Quiz Trigger (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1238,9 +1217,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1456709182}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -1256,6 +1239,10 @@ PrefabInstance:
     - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: m_Name
       value: Quiz Trigger (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2093,9 +2080,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 723399019}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -2281,7 +2272,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -4106,7 +4097,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7b311246c19fa7d48816f2d725ac6d42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6962,7 +6953,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4cb1d2f674f2ace43b4a12fd025ebb35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8944,7 +8935,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -9993,7 +9984,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -11999,7 +11990,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -13117,9 +13108,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 777483614}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -13135,6 +13130,10 @@ PrefabInstance:
     - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: m_Name
       value: Quiz Trigger (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14759,7 +14758,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c002ed2dcad676846a06b26eac893180, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15202,9 +15201,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 137075780}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -15717,7 +15720,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -16129,9 +16132,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6228083828199486402}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -17095,9 +17102,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7295748443707446976, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 7295748443707446976, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 7385934999447552403, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -17921,7 +17932,7 @@ PrefabInstance:
     - target: {fileID: 6291332439544099899, guid: 2ac9d3db1dda4e546bd724c3fbc0dbd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 6291332439544099899, guid: 2ac9d3db1dda4e546bd724c3fbc0dbd2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -18697,9 +18708,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1706832140}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -18966,7 +18981,7 @@ PrefabInstance:
     - target: {fileID: 8116018792144743050, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 8116018792144743050, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -19222,9 +19237,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 484089956}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -19494,9 +19513,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5135450968358605748, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5135450968358605748, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5814882816728421598, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
       propertyPath: fireballs.Array.data[0]
       value: 
@@ -19777,9 +19800,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 677474046}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -19795,6 +19822,10 @@ PrefabInstance:
     - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: m_Name
       value: Quiz Trigger (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464253078724899546, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20303,7 +20334,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -22960,9 +22991,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1512689053}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager3
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: buttonInteract
       value: 
@@ -23394,7 +23429,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -24051,7 +24086,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 9.999998, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -24062,7 +24097,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25.873331, y: 2.8172622}
+  m_Size: {x: 45.873325, y: 2.8172622}
   m_EdgeRadius: 0
 --- !u!1 &1576136285
 GameObject:
@@ -24854,7 +24889,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 50cbe1a9d8ec145419744a20a6730014, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -25764,7 +25799,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f35a5ce20694ac64eb81570f5ad42ba2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -25785,7 +25820,7 @@ Transform:
   m_GameObject: {fileID: 1743951254}
   serializedVersion: 2
   m_LocalRotation: {x: 0.011618629, y: -0.011618629, z: 0.70701134, w: 0.70701134}
-  m_LocalPosition: {x: 65.47, y: -11.12, z: 0}
+  m_LocalPosition: {x: 65.47, y: -10.62027, z: 0.016429005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27772,7 +27807,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 
@@ -30141,7 +30176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2066456582}
   - component: {fileID: 2066456584}
-  - component: {fileID: 2066456583}
   m_Layer: 6
   m_Name: save under - Copy - Copy (6)
   m_TagString: Ground
@@ -30164,51 +30198,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1086664464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2066456583
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066456581}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 25.873331, y: 2.8172622}
-    newSize: {x: 25.873331, y: 2.8172622}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 25.873331, y: 2.8172622}
-  m_EdgeRadius: 0
 --- !u!212 &2066456584
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30249,7 +30238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 50cbe1a9d8ec145419744a20a6730014, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -30886,7 +30875,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
-      objectReference: {fileID: 13845856}
+      objectReference: {fileID: 0}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: kamuBenarImage
       value: 

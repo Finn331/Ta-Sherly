@@ -12,10 +12,8 @@ public class Checkpoint : MonoBehaviour
 
     [Header("Script Reference")]
     public LevelsManager levelsManager;
-
-    [Header("Camera Setting")]
-    public GameObject cameraA;
-    public GameObject cameraB;
+    [SerializeField] LevelManager2 levelManager2;
+    [SerializeField] LevelManager3 levelManager3;
 
     private void Awake()
     {
@@ -34,23 +32,24 @@ public class Checkpoint : MonoBehaviour
         {
             Debug.LogWarning("currentCheckpoint is null, calling Die on playerStatus");
             playerStatus.Die();
-            levelsManager.GameOver();
+            if (levelsManager != null)
+            {
+                levelsManager.GameOver();
+            }
+            if (levelManager2 != null)
+            {
+                levelManager2.GameOver();
+            }
+            if (levelManager3 != null)
+            {
+                levelManager3.GameOver();
+            }
             playerStatus.DisableSprite();
             return; // Stop execution to prevent further errors
         }
 
         playerStatus.Respawn();
-        transform.position = currentCheckpoint.position;
-
-        // Camera logic based on checkpointCounter
-        if (checkpointCounter > 1) // Camera B activates after second checkpoint
-        {
-            ActivateCameraB();
-        }
-        else if (checkpointCounter == 1)
-        {
-            ActivateCameraA();
-        }
+        transform.position = currentCheckpoint.position;       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,17 +62,5 @@ public class Checkpoint : MonoBehaviour
             collision.GetComponent<Collider2D>().enabled = false;
             collision.GetComponent<Animator>().SetTrigger("triggered");
         }
-    }
-
-    private void ActivateCameraA()
-    {
-        cameraB.SetActive(false);
-        cameraA.SetActive(true);
-    }
-
-    private void ActivateCameraB()
-    {
-        cameraA.SetActive(false);
-        cameraB.SetActive(true);
     }
 }

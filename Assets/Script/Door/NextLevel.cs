@@ -9,6 +9,7 @@ public class NextLevel : MonoBehaviour
     [Header("Score Requirement")]
     [SerializeField] int scoreRequirement;
     [SerializeField] string nextLevelName;
+    [SerializeField] TextMeshProUGUI scoreText;
 
     [Header("End Level Panel")]
     [SerializeField] GameObject endLevelPanel;
@@ -45,6 +46,13 @@ public class NextLevel : MonoBehaviour
                     LeanTween.scale(interactButton, new Vector3(1, 1, 1), 1f).setEase(LeanTweenType.easeOutBack);
                     canTeleport = true;
                 }
+
+                if (playerStatus.score < scoreRequirement)
+                {
+                    scoreText.gameObject.SetActive(true);
+                    //scoreText.text = "Score: " + playerStatus.score + "/" + scoreRequirement;
+                    LeanTween.scale(scoreText.gameObject, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+                }
             }
         }
     }
@@ -62,6 +70,11 @@ public class NextLevel : MonoBehaviour
             if (playerStatus.score >= scoreRequirement)
             {
                 anim.SetTrigger("close");
+            }
+
+            if (playerStatus.score < scoreRequirement)
+            {                
+                LeanTween.scale(scoreText.gameObject, new Vector3(0, 0, 0), 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() => scoreText.gameObject.SetActive(false));
             }
         }
     }
@@ -107,12 +120,32 @@ public class NextLevel : MonoBehaviour
         LoadingLevelBtn(nextLevelName);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (levelAdd == 2)
+        {
+            SaveManager.instance.level2Unlocked = true;
+            SaveManager.instance.Save();
+        }
+        else if (levelAdd == 3)
+        {
+            SaveManager.instance.level3Unlocked = true;
+            SaveManager.instance.Save();
+        }
     }
 
     public void MainMenuBtn()
     {
         SaveCurrentScore();
-
+        if (levelAdd == 2)
+        {
+            SaveManager.instance.level2Unlocked = true;
+            SaveManager.instance.Save();
+        }
+        else if (levelAdd == 3)
+        {
+            SaveManager.instance.level3Unlocked = true;
+            SaveManager.instance.Save();
+        }
         Time.timeScale = 1;
         LoadingLevelBtn("Mainmenu");
     }

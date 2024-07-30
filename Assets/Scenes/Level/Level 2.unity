@@ -382,6 +382,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (4)
@@ -916,90 +920,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2139148698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &81684698
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 81684700}
-  - component: {fileID: 81684699}
-  m_Layer: 0
-  m_Name: tengkorak-r
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &81684699
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81684698}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fef14daaccc565541b1cb3db76648ae2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.57}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &81684700
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81684698}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.55, y: -3.13, z: 0}
-  m_LocalScale: {x: 0.59341, y: 0.59341, z: 0.59341}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 245365682}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &82875584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1022,7 +942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1034,7 +954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1
+      value: -0.00000058114523
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1046,7 +966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 3438221068878183861, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: arrows.Array.size
@@ -1333,6 +1253,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (8)
@@ -1637,6 +1561,10 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 824306039}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
@@ -2160,6 +2088,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (6)
@@ -2438,6 +2370,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1827725366}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -2615,6 +2551,10 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 484089956}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
@@ -3081,7 +3021,6 @@ Transform:
   - {fileID: 773633970}
   - {fileID: 1956876255}
   - {fileID: 982386437}
-  - {fileID: 81684700}
   - {fileID: 806197458}
   - {fileID: 545447808}
   - {fileID: 490420888}
@@ -3104,6 +3043,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin
@@ -3769,6 +3712,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6228083828199486399}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -3958,6 +3905,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (5)
@@ -4253,6 +4204,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (3)
@@ -5282,6 +5237,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2727307389559559700, guid: e1289991d05df9a4d9c146878b1e19bd, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1720890166}
+    - target: {fileID: 2727307389559559700, guid: e1289991d05df9a4d9c146878b1e19bd, type: 3}
       propertyPath: endLevelPanel
       value: 
       objectReference: {fileID: 1645466223}
@@ -5303,7 +5262,7 @@ PrefabInstance:
       objectReference: {fileID: 496954788}
     - target: {fileID: 2727307389559559700, guid: e1289991d05df9a4d9c146878b1e19bd, type: 3}
       propertyPath: scoreRequirement
-      value: 60
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2727307389559559700, guid: e1289991d05df9a4d9c146878b1e19bd, type: 3}
       propertyPath: endLevelScoreText
@@ -6037,7 +5996,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0556285de4ffbaf4e8307f2a7a53ae0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8512,6 +8471,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1706832140}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -9324,7 +9287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9336,7 +9299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1
+      value: -0.00000058114523
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9348,7 +9311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 3438221068878183861, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: arrows.Array.size
@@ -9391,6 +9354,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (1)
@@ -10337,6 +10304,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 677474044}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -11096,6 +11067,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1007937599}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -11403,6 +11378,10 @@ PrefabInstance:
       propertyPath: quizPanel
       value: 
       objectReference: {fileID: 484089956}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
@@ -11919,6 +11898,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 777483614}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -12298,6 +12281,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1467361570}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -12499,6 +12486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (7)
@@ -12716,6 +12707,10 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 1110043492}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
@@ -13211,6 +13206,10 @@ PrefabInstance:
       propertyPath: quizPanel
       value: 
       objectReference: {fileID: 723399017}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
@@ -13708,6 +13707,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7295748443707446976, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 7295748443707446976, guid: 688b1eb0580677d4cbcc77669ba01d36, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -13961,6 +13964,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963227695}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -14162,6 +14169,10 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 721863315}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
@@ -15862,6 +15873,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5135450968358605748, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5135450968358605748, guid: 16d86b5c9dda3444c91c568508463d9d, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -16875,7 +16890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.x
@@ -16887,7 +16902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1
+      value: -0.00000058114523
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16899,7 +16914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 3438221068878183861, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: arrows.Array.size
@@ -18209,6 +18224,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1594660257}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -19517,6 +19536,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1512689053}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -19647,6 +19670,10 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 278721480}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
@@ -19962,6 +19989,10 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 2088620042}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelsManager
       value: 
@@ -20305,6 +20336,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
   m_PrefabInstance: {fileID: 1597913401}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1702188060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1702188061}
+  m_Layer: 6
+  m_Name: ===== Batas ===== (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1702188061
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702188060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2089306497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1706832138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20629,6 +20695,140 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1720890164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720890165}
+  - component: {fileID: 1720890167}
+  - component: {fileID: 1720890166}
+  m_Layer: 5
+  m_Name: scoreText tidak cukup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1720890165
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720890164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2089306497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 160, y: -41}
+  m_SizeDelta: {x: 720.186, y: 210.186}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1720890166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720890164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Score kamu kurang, ayo kumpulkan lagi!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: a97b26178f84caa4e9a7a76acdddc8ff, type: 2}
+  m_sharedMaterial: {fileID: 6104510176722824066, guid: a97b26178f84caa4e9a7a76acdddc8ff, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4283869164
+  m_fontColor: {r: 0.9245283, g: 0.6544039, b: 0.33579564, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1720890167
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720890164}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1722171855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20900,7 +21100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.x
@@ -20912,7 +21112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1
+      value: -0.00000058114523
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20924,7 +21124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090804483221877178, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -360
       objectReference: {fileID: 0}
     - target: {fileID: 3438221068878183861, guid: 5b89e54b0b7c8cc49ac93f0561463d80, type: 3}
       propertyPath: arrows.Array.size
@@ -21558,6 +21758,10 @@ PrefabInstance:
       propertyPath: quizPanel
       value: 
       objectReference: {fileID: 1456709180}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
@@ -23257,7 +23461,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9c36d41dd8213f7458a798e218854c40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24390,6 +24594,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (2)
@@ -24452,6 +24660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133863628}
     m_Modifications:
+    - target: {fileID: 721825416480273501, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
+      propertyPath: coinCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1828930903678098246, guid: 2431eb4c3549d6e4c9b4737b11e53524, type: 3}
       propertyPath: m_Name
       value: Coin (9)
@@ -25012,6 +25224,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 137075778}
     - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
+      propertyPath: levelManager2
+      value: 
+      objectReference: {fileID: 13845859}
+    - target: {fileID: 5025288851515216410, guid: b24f5adf8b1e0f0469bb2dd94f07ad12, type: 3}
       propertyPath: levelsManager
       value: 
       objectReference: {fileID: 0}
@@ -25132,6 +25348,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1720890165}
   - {fileID: 6228083828199486400}
   - {fileID: 1706832139}
   - {fileID: 777483613}
@@ -25152,6 +25369,7 @@ RectTransform:
   - {fileID: 925470425}
   - {fileID: 1446925271}
   - {fileID: 1645466224}
+  - {fileID: 1702188061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -16,6 +16,8 @@ public class QuizSystem : MonoBehaviour
 
     [Header("Script Reference")]
     public LevelsManager levelsManager;
+    [SerializeField] LevelManager2 levelManager2;
+    [SerializeField] LevelManager3 levelManager3;
     public PlayerController playerController;
     public PlayerController playerController2;
 
@@ -34,7 +36,22 @@ public class QuizSystem : MonoBehaviour
         Time.timeScale = 1;
         GameObject.Destroy(quizTrigger);
         LeanTween.scale(kamuBenarImage, new Vector3(1, 1, 1), 1.3f).setEase(easingType);
-        levelsManager.isPaused = false;
+
+        if (levelsManager != null)
+        {
+            levelsManager.isPaused = false;
+        }
+
+        if (levelManager2 != null)
+        {
+            levelManager2.isPaused = false;
+        }
+
+        if (levelManager3 != null)
+        {
+            levelManager3.isPaused = false;
+        }
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         playerController.enabled = true;
@@ -58,7 +75,21 @@ public class QuizSystem : MonoBehaviour
         StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
         LeanTween.scale(kamuSalahImage, new Vector3(1, 1, 1), 1.3f).setEase(easingType);
-        levelsManager.isPaused = false;
+        if (levelsManager != null)
+        {
+            levelsManager.isPaused = false;
+        }
+
+        if (levelManager2 != null)
+        {
+            levelManager2.isPaused = false;
+        }
+
+        if (levelManager3 != null)
+        {
+            levelManager3.isPaused = false;
+        }
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         playerController.enabled = true;
