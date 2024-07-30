@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; 
 using TMPro;
 
 public class AudioManager : MonoBehaviour
@@ -10,9 +10,6 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource soundSource;
     private AudioSource musicSource;
-
-    [SerializeField] private TextMeshProUGUI musicVolumeText;  // Add this line
-    [SerializeField] private TextMeshProUGUI soundVolumeText;  // Add this line
 
     private void Awake()
     {
@@ -69,14 +66,12 @@ public class AudioManager : MonoBehaviour
     {
         soundSource.volume = _change;
         PlayerPrefs.SetFloat("soundVolume", _change);
-        UpdateSoundVolumeText();  // Add this line
     }
 
     public void ChangeMusicVolume(float _change)
     {
         musicSource.volume = _change;
         PlayerPrefs.SetFloat("musicVolume", _change);
-        UpdateMusicVolumeText();  // Add this line
     }
 
     // Method to be called by the slider to set music volume
@@ -91,13 +86,13 @@ public class AudioManager : MonoBehaviour
         ChangeSoundVolume(slider.value);
     }
 
-    private void UpdateMusicVolumeText()
+    public float GetMusicVolume()
     {
-        musicVolumeText.text = $"{Mathf.RoundToInt(musicSource.volume * 100)}%";
+        return musicSource.volume;
     }
 
-    private void UpdateSoundVolumeText()
+    public float GetSoundVolume()
     {
-        soundVolumeText.text = $"{Mathf.RoundToInt(soundSource.volume * 100)}%";
+        return soundSource.volume;
     }
 }
