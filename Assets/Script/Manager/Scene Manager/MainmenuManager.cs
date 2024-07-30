@@ -83,7 +83,7 @@ public class MainmenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Mechanism Functions
@@ -197,7 +197,7 @@ public class MainmenuManager : MonoBehaviour
         PlayerPrefs.Save();
         characterSelected = true;
     }
-    
+
     public void BackButtonCharacterSelect()
     {
         AudioManager.instance.PlaySound(buttonClick);
@@ -293,7 +293,7 @@ public class MainmenuManager : MonoBehaviour
     void LastScore()
     {
 
-       level1LastScore.text = "Last Score: " + SaveManager.instance.level1Score.ToString();
+        level1LastScore.text = "Last Score: " + SaveManager.instance.level1Score.ToString();
         level2LastScore.text = "Last Score: " + SaveManager.instance.level2Score.ToString();
         level3LastScore.text = "Last Score: " + SaveManager.instance.level3Score.ToString();
     }
@@ -308,13 +308,27 @@ public class MainmenuManager : MonoBehaviour
 
     public void MenuMenulis()
     {
-       AudioManager.instance.PlaySound(buttonClick);
-       LeanTween.scale(comingSoonHolder, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+        AudioManager.instance.PlaySound(buttonClick);
+        comingSoonHolder.SetActive(true);
+        LeanTween.scale(comingSoonHolder, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+
+        menuBelajarBackground.SetActive(true);
+        menuBelajarButton.SetActive(false);
+        menuBelajarPanel.SetActive(false);
     }
 
     public void MenuMenulisBack()
     {
-       AudioManager.instance.PlaySound(buttonClick);
-       LeanTween.scale(comingSoonHolder, new Vector3(0, 0, 0), 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() => comingSoonHolder.SetActive(false));
+        AudioManager.instance.PlaySound(buttonClick);
+        LeanTween.scale(comingSoonHolder, new Vector3(0, 0, 0), 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() => comingSoonHolder.SetActive(false));
+        menuBelajarBackground.SetActive(true);
+        menuBelajarButton.SetActive(true);
+        menuBelajarPanel.SetActive(true);
+    }
+
+    public void MenuBelajarVideo()
+    {
+        AudioManager.instance.PlaySound(buttonClick);
+        SceneManager.LoadScene("BelajarVideo");
     }
 }
