@@ -213,7 +213,7 @@ public class LevelsManager : MonoBehaviour
 
     void CaraBermainChecking()
     {
-        if (caraBermainPanel != null && SaveManager.instance.level1Score >= 0)
+        if (caraBermainPanel != null && SaveManager.instance.level1Score >= 1)
         {
             caraBermainPanel.SetActive(false);
             playerController.enabled = true;
