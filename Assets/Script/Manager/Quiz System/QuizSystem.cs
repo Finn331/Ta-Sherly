@@ -33,7 +33,7 @@ public class QuizSystem : MonoBehaviour
         StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
         GameObject.Destroy(quizTrigger);
-        LeanTween.scale(kamuBenarImage, new Vector3(1, 1, 1), 0.5f).setEase(easingType);
+        LeanTween.scale(kamuBenarImage, new Vector3(1, 1, 1), 1.3f).setEase(easingType);
         levelsManager.isPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -57,7 +57,7 @@ public class QuizSystem : MonoBehaviour
     {
         StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
-        LeanTween.scale(kamuSalahImage, new Vector3(1, 1, 1), 0.5f).setEase(easingType);
+        LeanTween.scale(kamuSalahImage, new Vector3(1, 1, 1), 1.3f).setEase(easingType);
         levelsManager.isPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -69,7 +69,7 @@ public class QuizSystem : MonoBehaviour
 
     private IEnumerator DeactivateQuizPanelWithDelay()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.4f);
         quizPanel.SetActive(false);
     }
 }
