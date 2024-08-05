@@ -30,6 +30,7 @@ public class LevelManager2 : MonoBehaviour
 
     [Header("Audio Source Setting")]
     public AudioSource lavaAudioSource;
+    [SerializeField] AudioClip buttonClick;
 
     [Header("Cinemachine Camera Setup")]
     [SerializeField] GameObject cinemachineCameraP1;
@@ -99,7 +100,7 @@ public class LevelManager2 : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         lavaAudioSource.enabled = false;
-
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void ResumeGame()
@@ -110,6 +111,7 @@ public class LevelManager2 : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         lavaAudioSource.enabled = true;
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void GameOver()
@@ -120,6 +122,7 @@ public class LevelManager2 : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         lavaAudioSource.enabled = false;
+
     }
 
     public void RestartGame()
@@ -130,7 +133,7 @@ public class LevelManager2 : MonoBehaviour
         playerController2.enabled = true;
         playerAttack.enabled = true;
         playerAttack2.enabled = true;
-
+        AudioManager.instance.PlaySound(buttonClick);
         // Check if Player 1 or Player 2 is active and reset its position if so
         foreach (GameObject player in players)
         {
@@ -159,11 +162,13 @@ public class LevelManager2 : MonoBehaviour
     {
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Mainmenu");
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     void PlayerReference()

@@ -132,4 +132,4 @@ MonoBehaviour:
   attackCooldown: 2
   firePoint: {fileID: 7244277915431271863}
   arrows: []
-  arrowSound: {fileID: 0}
+  arrowSound: {fileID: 8300000, guid: f88ae22855271134d8a2e6892bd910b1, type: 3}

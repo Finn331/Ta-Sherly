@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 13845857}
   - component: {fileID: 13845858}
   - component: {fileID: 13845859}
+  - component: {fileID: 13845860}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -253,8 +254,24 @@ MonoBehaviour:
   playerAttack: {fileID: 1306313718}
   playerAttack2: {fileID: 1127687330}
   lavaAudioSource: {fileID: 0}
+  buttonClick: {fileID: 8300000, guid: 825d464b05deb4e40877ae0a66bd622a, type: 3}
   cinemachineCameraP1: {fileID: 2049299122}
   cinemachineCameraP2: {fileID: 236458963}
+--- !u!114 &13845860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13845855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9ca293d86c876498a5df0eec1b4310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxVolumeText: {fileID: 1266218493}
+  bgmVolumeText: {fileID: 1266218494}
+  buttonClick: {fileID: 8300000, guid: 825d464b05deb4e40877ae0a66bd622a, type: 3}
 --- !u!1001 &18766825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15217,7 +15234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3168178499601199866, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -355
+      value: -414.7209
       objectReference: {fileID: 0}
     - target: {fileID: 3444821006007638712, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
       propertyPath: m_text
@@ -15238,6 +15255,14 @@ PrefabInstance:
     - target: {fileID: 3629064211522859482, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772127318474470362, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 13845860}
+    - target: {fileID: 3772127318474470362, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseBGMVolume
       objectReference: {fileID: 0}
     - target: {fileID: 4032705475128170258, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -15431,6 +15456,14 @@ PrefabInstance:
       propertyPath: m_text
       value: KELUAR
       objectReference: {fileID: 0}
+    - target: {fileID: 8931840493121725056, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 13845860}
+    - target: {fileID: 8931840493121725056, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseSFXVolume
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15446,6 +15479,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3629064211522859482, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
   m_PrefabInstance: {fileID: 1266218490}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1266218493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3671594988544887105, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
+  m_PrefabInstance: {fileID: 1266218490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1266218494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8204362816223574592, guid: 3a1fd9bc8041fdd4497175725981aa65, type: 3}
+  m_PrefabInstance: {fileID: 1266218490}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1274912744
 GameObject:
   m_ObjectHideFlags: 0

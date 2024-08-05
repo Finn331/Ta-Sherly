@@ -34,6 +34,7 @@ public class LevelsManager : MonoBehaviour
 
     [Header("Audio Source Setting")]
     public AudioSource lavaAudioSource;
+    [SerializeField] AudioClip buttonClick;
 
     [Header("Cinemachine Camera Setup")]
     [SerializeField] GameObject cinemachineCameraP1;
@@ -103,6 +104,7 @@ public class LevelsManager : MonoBehaviour
 
         LeanTween.scale(caraBermainPanel, Vector3.zero, 0.5f).setEase(LeanTweenType.easeInOutBack).setOnComplete(() => caraBermainPanel.SetActive(false));
         StartCoroutine(DelayActivate());
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void PauseGame()
@@ -113,7 +115,7 @@ public class LevelsManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         lavaAudioSource.enabled = false;
-
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void ResumeGame()
@@ -124,6 +126,7 @@ public class LevelsManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         lavaAudioSource.enabled = true;
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void GameOver()
@@ -134,6 +137,7 @@ public class LevelsManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         lavaAudioSource.enabled = false;
+        
     }
 
     public void RestartGame()
@@ -145,7 +149,7 @@ public class LevelsManager : MonoBehaviour
         playerController2.enabled = true;
         playerAttack.enabled = true;
         playerAttack2.enabled = true;
-
+        AudioManager.instance.PlaySound(buttonClick);
         // Check if Player 1 or Player 2 is active and reset its position if so
         foreach (GameObject player in players)
         {
@@ -174,11 +178,13 @@ public class LevelsManager : MonoBehaviour
     {
         Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Mainmenu");
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     void PlayerReference()
