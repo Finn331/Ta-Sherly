@@ -25,8 +25,6 @@ public class PlayerStatus : MonoBehaviour
     [Header("Components")]
     public Component[] components;
 
-    [Header("Game Feels")]
-    public CameraShake cameraShake;
 
     [Header("Score Setting")]
     public TextMeshProUGUI scoreText;
@@ -102,10 +100,7 @@ public class PlayerStatus : MonoBehaviour
             anim.SetTrigger("hurt");
             AudioManager.instance.PlaySound(hurtSound);
             StartCoroutine(Invunerability());
-            if (Time.timeScale > 0)
-            {
-                cameraShake.ShakeCamera();
-            }
+            
         }
         else
         {
@@ -127,10 +122,7 @@ public class PlayerStatus : MonoBehaviour
             anim.SetTrigger("hurt2");
             AudioManager.instance.PlaySound(hurtSound);
             StartCoroutine(Invunerability());
-            if (Time.timeScale > 0)
-            {
-                cameraShake.ShakeCamera();
-            }
+            
         }
         else
         {
