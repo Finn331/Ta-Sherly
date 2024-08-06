@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class VideoManager : MonoBehaviour
 {
+    [Header("Setting Panel")]
+    public GameObject settingPanel;
+    public GameObject settingButton;
+
     [Header("Gameobject Menu")]
     [SerializeField] private GameObject videoMenu1;
     [SerializeField] private GameObject videoMenu2;
@@ -30,6 +34,24 @@ public class VideoManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Setting()
+    {
+        settingPanel.SetActive(true);
+        settingButton.SetActive(true);
+        LeanTween.scale(settingButton, new Vector3(1, 1, 1), 0.5f).setEase(LeanTweenType.easeOutBack);
+        AudioManager.instance.PlaySound(buttonClick);
+    }
+
+    public void CloseSetting()
+    {
+        settingPanel.SetActive(false);
+        LeanTween.scale(settingButton, new Vector3(0, 0, 0), 0.5f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
+        {
+            settingButton.SetActive(false);
+        });
+        AudioManager.instance.PlaySound(buttonClick);
     }
 
     public void ShowVideoMenu1()
@@ -100,4 +122,16 @@ public class VideoManager : MonoBehaviour
         SceneManager.LoadScene("Mainmenu");
         AudioManager.instance.PlaySound(buttonClick);
     }
+
+    // Sound Setting
+    //public void SetMusicVolumeFromSlider()
+    //{
+    //    AudioManager.instance.SetMusicVolumeFromSlider();
+    //}
+
+    //// Method to be called by the slider to set sound (SFX) volume
+    //public void SetSoundVolumeFromSlider()
+    //{
+    //    AudioManager.instance.SetSoundVolumeFromSlider();
+    //}
 }
