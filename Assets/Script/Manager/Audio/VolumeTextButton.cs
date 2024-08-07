@@ -42,7 +42,7 @@ public class VolumeTextButton : MonoBehaviour
 
     private void UpdateVolumeTexts()
     {
-        sfxVolumeText.text = $"SFX VOLUME: {(AudioManager.instance.GetSoundVolume() * 100).ToString("F0")}%";
-        bgmVolumeText.text = $"BGM VOLUME: {(AudioManager.instance.GetMusicVolume() * 100).ToString("F0")}%";
+        sfxVolumeText.text = $"{(AudioManager.instance.GetSoundVolume() * 100).ToString("F0")}%";
+        bgmVolumeText.text = $"{(AudioManager.instance.GetMusicVolume() * 100).ToString("F0")}%";
     }
 }
