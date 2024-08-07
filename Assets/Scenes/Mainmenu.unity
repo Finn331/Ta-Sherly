@@ -4688,16 +4688,16 @@ MonoBehaviour:
   baClip: {fileID: 8300000, guid: 07d513713ae9ed945af742e4180a1235, type: 3}
   maClip: {fileID: 8300000, guid: 5a42489719f098047ac119d4780c35e6, type: 3}
   yaClip: {fileID: 8300000, guid: 0711c6ed11fcb0243a59e85f5b8d9396, type: 3}
-  raClip: {fileID: 8300000, guid: a5f65d0114c263046833f3b68d18e888, type: 3}
+  raClip: {fileID: 8300000, guid: 94ce7bd34be908e49947956f48163d47, type: 3}
   laClip: {fileID: 8300000, guid: ccf8a8e069f145c4fb0301d3cffa116a, type: 3}
   waClip: {fileID: 8300000, guid: 605bfabdeee0a664c86ad7147f5e9dbb, type: 3}
   saClip: {fileID: 8300000, guid: 51b6636e4a1fa8f459c67fb85552de73, type: 3}
   haClip: {fileID: 8300000, guid: b98188efe86a42e4481aee23c213546a, type: 3}
-  faClip: {fileID: 8300000, guid: 890d235c434a9df4295bb0fe73b3ef79, type: 3}
+  faClip: {fileID: 8300000, guid: 2d3d351bf37a9344c8e7cfb99c57aa34, type: 3}
   qaClip: {fileID: 8300000, guid: 2c8008e212da1fb4c8b2f5e3626e6ce6, type: 3}
   vaClip: {fileID: 8300000, guid: 6fd9276d26dc233409db2d2dd47b6e7c, type: 3}
   xaClip: {fileID: 8300000, guid: e1144f27a3518c64cba16d5dea753a7a, type: 3}
-  zaClip: {fileID: 8300000, guid: 35e67075609c88d42bd823923c4f257a, type: 3}
+  zaClip: {fileID: 8300000, guid: ccff0bebf4e765042b1ae3ff717ee3f8, type: 3}
 --- !u!114 &476384065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6956,7 +6956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696647413
