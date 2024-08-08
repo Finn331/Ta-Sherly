@@ -286,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957494822240090673, guid: ba695f00e273cb949b791737511af07b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.25
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1957494822240090673, guid: ba695f00e273cb949b791737511af07b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -323,6 +323,10 @@ PrefabInstance:
     - target: {fileID: 2725190293886797861, guid: ba695f00e273cb949b791737511af07b, type: 3}
       propertyPath: m_Name
       value: Pendulum
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801670599541324713, guid: ba695f00e273cb949b791737511af07b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2559,7 +2563,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: quizPanel
       value: 
-      objectReference: {fileID: 873867069}
+      objectReference: {fileID: 484089956}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: easingType
       value: 7
@@ -2567,7 +2571,7 @@ PrefabInstance:
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: quizTrigger
       value: 
-      objectReference: {fileID: 484089956}
+      objectReference: {fileID: 873867069}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
@@ -6379,11 +6383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8041060703551015224, guid: 32f116301bbe4f04da4bd15c34809d8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.864708
+      value: 23.364708
       objectReference: {fileID: 0}
     - target: {fileID: 8041060703551015224, guid: 32f116301bbe4f04da4bd15c34809d8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.004877
+      value: -18.89
       objectReference: {fileID: 0}
     - target: {fileID: 8041060703551015224, guid: 32f116301bbe4f04da4bd15c34809d8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15041,7 +15045,7 @@ Transform:
   m_GameObject: {fileID: 1238868463}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26, y: -18.25, z: 0}
+  m_LocalPosition: {x: 23.25, y: -20.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15734,7 +15738,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e63758f86908d0b4ebe102fe274838a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
