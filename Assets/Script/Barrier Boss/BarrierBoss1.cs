@@ -31,4 +31,13 @@ public class BarrierBoss1 : MonoBehaviour
             boss.SetActive(false);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            barrier2.SetActive(false);
+            boss.SetActive(false);
+        }
+    }
 }
