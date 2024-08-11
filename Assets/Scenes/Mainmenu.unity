@@ -4560,6 +4560,7 @@ MonoBehaviour:
   menuBelajarButton: {fileID: 1453896308}
   menuMenulisButton: {fileID: 1743022082}
   comingSoonHolder: {fileID: 330273513}
+  menuBelajarHeading: {fileID: 397499800}
   infoHolder: {fileID: 696647411}
   infoCloseButton: {fileID: 1495582942}
   infoPanel: {fileID: 1453060855}

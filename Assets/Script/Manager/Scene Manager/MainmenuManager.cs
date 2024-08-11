@@ -41,6 +41,8 @@ public class MainmenuManager : MonoBehaviour
     public GameObject menuBelajarButton;
     [SerializeField] Button menuMenulisButton;
     [SerializeField] GameObject comingSoonHolder;
+    [SerializeField] GameObject menuBelajarHeading;
+
     [Header("Info Holder")]
     [SerializeField] GameObject infoHolder;
     [SerializeField] GameObject infoCloseButton;
@@ -315,6 +317,7 @@ public class MainmenuManager : MonoBehaviour
         menuBelajarBackground.SetActive(true);
         menuBelajarButton.SetActive(false);
         menuBelajarPanel.SetActive(false);
+        menuBelajarHeading.SetActive(false);
     }
 
     public void MenuMenulisBack()
@@ -324,6 +327,7 @@ public class MainmenuManager : MonoBehaviour
         menuBelajarBackground.SetActive(true);
         menuBelajarButton.SetActive(true);
         menuBelajarPanel.SetActive(true);
+        menuBelajarHeading.SetActive(true);
     }
 
     public void MenuBelajarVideo()
