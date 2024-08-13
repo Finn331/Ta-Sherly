@@ -9,7 +9,7 @@ public class NextLevel : MonoBehaviour
     [Header("Score Requirement")]
     [SerializeField] int scoreRequirement;
     [SerializeField] string nextLevelName;
-    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] GameObject scoreText;
 
     [Header("End Level Panel")]
     [SerializeField] GameObject endLevelPanel;
