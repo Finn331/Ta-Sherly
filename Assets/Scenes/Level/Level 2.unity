@@ -1667,6 +1667,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 824306039}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
       objectReference: {fileID: 13845859}
@@ -2605,6 +2613,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1827725366}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
       objectReference: {fileID: 13845859}
@@ -2786,6 +2802,14 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 873867069}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
@@ -11548,6 +11572,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1007937599}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
       objectReference: {fileID: 13845859}
@@ -13189,6 +13221,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1110043492}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
       objectReference: {fileID: 13845859}
@@ -14446,6 +14486,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963227695}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
       objectReference: {fileID: 13845859}
@@ -14651,6 +14699,14 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 721863315}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
@@ -18692,6 +18748,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1594660257}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
       objectReference: {fileID: 13845859}
@@ -20143,6 +20207,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 278721480}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 
       objectReference: {fileID: 13845859}
@@ -20461,6 +20533,14 @@ PrefabInstance:
       propertyPath: quizTrigger
       value: 
       objectReference: {fileID: 2088620042}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuBenarClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 485815821060a0d46b2409f28c236f97, type: 3}
+    - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
+      propertyPath: kamuSalahClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0ee9061cf279d848878ae45c66d3fdf, type: 3}
     - target: {fileID: 5553218226149278403, guid: a8e5fc5f46c819d4085c78c9ddbd0a29, type: 3}
       propertyPath: levelManager2
       value: 

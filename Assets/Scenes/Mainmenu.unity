@@ -4568,7 +4568,7 @@ MonoBehaviour:
   menuCanvas: {fileID: 112110540}
   loadingSlider: {fileID: 2084113703}
   buttonClick: {fileID: 8300000, guid: 825d464b05deb4e40877ae0a66bd622a, type: 3}
-  bgmSong: {fileID: 8300000, guid: 1d7c6f1d92d5cd64f9e9876c3845362f, type: 3}
+  bgmSong: {fileID: 8300000, guid: baa59523cda1f2b47ac1946d15a569dd, type: 3}
 --- !u!4 &476384061
 Transform:
   m_ObjectHideFlags: 0
